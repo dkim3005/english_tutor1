@@ -1,39 +1,861 @@
+물론입니다. 각 챕터의 학습 내용을 현재보다 약 5배로 확장하여, 더 깊이 있는 설명과 풍부한 예문을 담은 HTML 코드를 아래와 같이 다시 작성했습니다. 개념 이해를 돕기 위해 표, 추가 설명, 다양한 예시를 보강했습니다.
+
+-----
+
+```html
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>영어 문법 학습 허브</title>
+    <title>영어 문법 대사전: 기초부터 심화까지 (최종 완성본)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Gowun Dodum', sans-serif; }
+        body { font-family: 'Gowun Dodum', sans-serif; background-color: #f9fafb; }
+        .nav-tab.active { color: #2563eb; border-bottom-color: #2563eb; }
+        .content-section { display: none; }
+        .content-section.active { display: block; }
+        details > summary { cursor: pointer; list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+        details[open] summary .accordion-icon { transform: rotate(90deg); }
+        .accordion-icon { transition: transform 0.2s; }
+        .quiz-input.correct { border-color: #16a34a; background-color: #f0fdf4; }
+        .quiz-input.incorrect { border-color: #dc2626; background-color: #fef2f2; }
+        .concept-box { background-color: #f3f4f6; border-left: 4px solid #60a5fa; padding: 1rem; margin-top: 1rem; border-radius: 0.25rem;}
+        table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+        th, td { border: 1px solid #e5e7eb; padding: 0.75rem; text-align: left; }
+        th { background-color: #f3f4f6; font-semibold; }
     </style>
 </head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen">
-    <div class="text-center p-10 bg-white rounded-2xl shadow-2xl max-w-2xl mx-auto">
-        <header class="mb-12">
-            <h1 class="text-5xl font-bold text-blue-600">영어 문법 학습 허브</h1>
-            <p class="text-lg text-gray-600 mt-4">개념 학습부터 실전 연습까지, 모든 것을 한 곳에서 시작하세요.</p>
+<body class="text-gray-800">
+
+    <div class="container mx-auto max-w-5xl p-4 sm:p-6">
+        <header class="text-center my-8">
+            <h1 class="text-4xl sm:text-5xl font-bold text-blue-600">영어 문법 대사전</h1>
+            <p class="text-lg text-gray-600 mt-2">기초부터 심화까지 모든 것을 한 곳에서</p>
         </header>
-        
-        <main class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <a href="./textbook.html" class="block p-8 bg-blue-500 text-white rounded-xl shadow-lg hover:bg-blue-600 transition-transform transform hover:-translate-y-1">
-                <div class="text-3xl mb-4">📖</div>
-                <h2 class="text-2xl font-bold mb-2">교재 보기</h2>
-                <p class="font-light">기초부터 심화까지, 영문법의 모든 개념을 체계적으로 학습합니다.</p>
-            </a>
+
+        <nav id="navigation" class="flex flex-wrap justify-center border-b border-gray-200 mb-8">
+            <button data-target="#part1" class="nav-tab text-md font-semibold px-4 py-3 text-gray-500 border-b-2 border-transparent">Part 1: 재료</button>
+            <button data-target="#part2" class="nav-tab text-md font-semibold px-4 py-3 text-gray-500 border-b-2 border-transparent">Part 2: 뼈대</button>
+            <button data-target="#part3" class="nav-tab text-md font-semibold px-4 py-3 text-gray-500 border-b-2 border-transparent">Part 3: 시제</button>
+            <button data-target="#part4" class="nav-tab text-md font-semibold px-4 py-3 text-gray-500 border-b-2 border-transparent">Part 4: 조동사</button>
+            <button data-target="#part5" class="nav-tab text-md font-semibold px-4 py-3 text-gray-500 border-b-2 border-transparent">Part 5: 수동태</button>
+            <button data-target="#part6" class="nav-tab text-md font-semibold px-4 py-3 text-gray-500 border-b-2 border-transparent">Part 6: 준동사</button>
+            <button data-target="#part7" class="nav-tab text-md font-semibold px-4 py-3 text-gray-500 border-b-2 border-transparent">Part 7: 수식어</button>
+            <button data-target="#part8" class="nav-tab text-md font-semibold px-4 py-3 text-gray-500 border-b-2 border-transparent">Part 8: 접속사</button>
+            <button data-target="#part9" class="nav-tab text-md font-semibold px-4 py-3 text-gray-500 border-b-2 border-transparent">Part 9: 관계사</button>
+            <button data-target="#part10" class="nav-tab text-md font-semibold px-4 py-3 text-gray-500 border-b-2 border-transparent">Part 10: 특수구문</button>
+        </nav>
+
+        <main>
+            <section id="part1" class="content-section">
+                <h2 class="text-2xl font-bold text-center mb-6">Part 1: 문장의 재료 (8품사)</h2>
+                <div class="space-y-4">
+                    <details class="bg-white rounded-lg shadow-sm" open>
+                        <summary class="text-lg font-semibold flex justify-between items-center p-4"><span>Chapter 1: 명사, 대명사</span><span class="accordion-icon text-blue-500 font-bold">▶</span></summary>
+                        <div class="p-4 border-t text-gray-700 space-y-4">
+                            <p><strong>명사(Noun)</strong>는 문장에서 주어, 목적어, 보어 자리에 들어가는 핵심 재료입니다. 사람, 사물, 장소, 개념 등의 이름을 나타냅니다. 명사는 그 특성에 따라 여러 종류로 나뉘며, 가장 중요한 구분은 셀 수 있는지 없는지입니다.</p>
+                            
+                            <div class="concept-box">
+                                <h4 class="font-semibold text-blue-700">1. 셀 수 있는 명사 (Countable Nouns)</h4>
+                                <p>하나, 둘, 셋과 같이 수를 셀 수 있는 명사입니다. 단수형과 복수형이 있으며, 단수일 때는 보통 앞에 a/an을 붙입니다.</p>
+                                <ul class="list-disc list-inside ml-4 mt-2 space-y-1">
+                                    <li><strong>규칙 복수형:</strong> 대부분의 명사는 뒤에 -s나 -es를 붙입니다. (book → books, bus → buses)</li>
+                                    <li><strong>불규칙 복수형:</strong> 형태가 완전히 바뀌거나 그대로인 경우도 있습니다. (man → men, child → children, sheep → sheep, fish → fish)</li>
+                                    <li><strong>예시:</strong> a computer, two friends, many ideas, a few questions</li>
+                                </ul>
+                            </div>
+
+                            <div class="concept-box">
+                                <h4 class="font-semibold text-blue-700">2. 셀 수 없는 명사 (Uncountable Nouns)</h4>
+                                <p>물질, 액체, 기체, 추상적 개념 등 일정한 형태가 없어 수를 셀 수 없는 명사입니다. 복수형으로 만들 수 없으며, a/an을 붙이지 않습니다.</p>
+                                <ul class="list-disc list-inside ml-4 mt-2 space-y-1">
+                                    <li><strong>종류:</strong> water, air, money, information, advice, love, peace, furniture</li>
+                                    <li><strong>수량 표현:</strong> 양을 나타낼 때는 단위를 나타내는 말을 사용합니다.<br>
+                                        - a piece of advice (충고 한 마디)<br>
+                                        - two glasses of water (물 두 잔)<br>
+                                        - a lot of furniture (많은 가구)<br>
+                                        - some information (약간의 정보)
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <p><strong>대명사(Pronoun)</strong>는 명사의 반복을 피하기 위해 대신 사용하는 말입니다. 문장에서의 역할(격)과 대상(인칭)에 따라 형태가 정교하게 바뀝니다.</p>
+                             <table>
+                                <thead>
+                                    <tr><th>종류</th><th>역할</th><th>예시</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td><strong>인칭대명사</strong></td><td>사람이나 사물을 직접 가리킴 (격 변화)</td><td>I love <strong>her</strong>. <strong>She</strong> gave <strong>me</strong> <strong>this</strong>.</td></tr>
+                                    <tr><td><strong>소유대명사</strong></td><td>'~의 것'이라는 소유의 의미</td><td>This bag is <strong>mine</strong>, not <strong>yours</strong>.</td></tr>
+                                    <tr><td><strong>지시대명사</strong></td><td>가까이 있거나 멀리 있는 것을 가리킴</td><td><strong>This</strong> is my car; <strong>that</strong> is my house.</td></tr>
+                                    <tr><td><strong>재귀대명사</strong></td><td>동작이 주어 자신에게 돌아옴을 나타냄</td><td>He introduced <strong>himself</strong>. I did it <strong>myself</strong> (강조).</td></tr>
+                                    <tr><td><strong>부정대명사</strong></td><td>막연한 대상이나 수량을 가리킴</td><td><strong>Someone</strong> is at the door. Do you need <strong>anything</strong>?</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </details>
+                    <details class="bg-white rounded-lg shadow-sm">
+                        <summary class="text-lg font-semibold flex justify-between items-center p-4"><span>Chapter 2: 동사, 형용사, 부사</span><span class="accordion-icon text-blue-500 font-bold">▶</span></summary>
+                        <div class="p-4 border-t text-gray-700 space-y-4">
+                            <p><strong>동사(Verb)</strong>는 주어의 동작이나 상태를 설명하며 문장의 심장과 같습니다. 동사 없이는 문장이 성립되지 않습니다.</p>
+                            <div class="concept-box">
+                                <h4 class="font-semibold text-blue-700">1. 동사의 종류</h4>
+                                <ul class="list-disc list-inside ml-4 mt-2 space-y-1">
+                                    <li><strong>be동사:</strong> 주어의 '상태'나 '존재'를 나타냅니다. (~이다, ~에 있다) 뒤에 보어가 필요합니다. (am, is, are, was, were)
+                                        <br><em>She <strong>is</strong> a teacher. They <strong>were</strong> in the park.</em></li>
+                                    <li><strong>일반동사:</strong> 주어의 '동작'을 나타냅니다. 목적어가 필요한 '타동사'와 필요 없는 '자동사'로 나뉩니다.
+                                        <br><em>He <strong>reads</strong> a book. (타동사) / The sun <strong>rises</strong>. (자동사)</em></li>
+                                    <li><strong>조동사:</strong> be동사나 일반동사를 도와 능력, 허가, 추측 등의 의미를 더합니다. (Part 4에서 상세히 다룸)
+                                        <br><em>You <strong>can do</strong> it. It <strong>will rain</strong> tomorrow.</em></li>
+                                </ul>
+                            </div>
+                            
+                            <p><strong>형용사(Adjective)</strong>는 명사나 대명사의 성질이나 상태를 꾸며주는 역할을 합니다. 문장에서의 위치에 따라 쓰임이 구분됩니다.</p>
+                            <ul class="list-disc list-inside ml-4 mt-2 space-y-1">
+                                <li><strong>한정적 용법:</strong> 명사 앞에서 직접 명사를 꾸밉니다.
+                                    <br><em>She has <strong>beautiful</strong> eyes. / I bought a <strong>new</strong> computer.</em></li>
+                                <li><strong>서술적 용법:</strong> 동사 뒤에서 주어나 목적어를 보충 설명합니다 (보어 역할).
+                                    <br><em>Her eyes are <strong>beautiful</strong>. (주격 보어) / This music makes me <strong>sleepy</strong>. (목적격 보어)</em></li>
+                            </ul>
+
+                            <p><strong>부사(Adverb)</strong>는 동사, 형용사, 다른 부사, 문장 전체를 꾸며 의미를 더 풍부하게 만드는 양념 같은 존재입니다. 명사 외에는 거의 모든 것을 수식할 수 있습니다.</p>
+                            <table>
+                                <thead>
+                                    <tr><th>수식 대상</th><th>예시 문장</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td><strong>동사 수식</strong></td><td>He runs <strong>fast</strong>. / She speaks English <strong>fluently</strong>.</td></tr>
+                                    <tr><td><strong>형용사 수식</strong></td><td>The movie was <strong>very</strong> exciting. / It is <strong>incredibly</strong> hot today.</td></tr>
+                                    <tr><td><strong>부사 수식</strong></td><td>He runs <strong>very</strong> fast. / She did it <strong>so</strong> quickly.</td></tr>
+                                    <tr><td><strong>문장 전체 수식</strong></td><td><strong>Luckily</strong>, I passed the exam. / <strong>Honestly</strong>, I don't agree.</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </details>
+                </div>
+            </section>
+
+            <section id="part2" class="content-section">
+                <h2 class="text-2xl font-bold text-center mb-6">Part 2: 문장의 뼈대 (구조)</h2>
+                <div class="space-y-4">
+                    <details class="bg-white rounded-lg shadow-sm" open>
+                        <summary class="text-lg font-semibold flex justify-between items-center p-4"><span>Chapter 3: 문장의 5형식</span><span class="accordion-icon text-blue-500 font-bold">▶</span></summary>
+                        <div class="p-4 border-t text-gray-700 space-y-4">
+                            <p>모든 영어 문장은 5가지 기본 뼈대 중 하나로 이루어져 있습니다. 동사의 종류에 따라 문장의 구조가 결정됩니다.</p>
+                            
+                            <div class="concept-box">
+                                <h4 class="font-semibold text-blue-700">1형식 (S + V)</h4>
+                                <p>주어와 동사만으로 의미가 완전한 문장입니다. 동사는 목적어나 보어를 필요로 하지 않는 '완전 자동사'입니다. 수식어(부사구 등)는 문장 형식에 영향을 주지 않습니다.</p>
+                                <ul class="list-disc list-inside ml-4 mt-2">
+                                    <li><em>Birds <strong>sing</strong>.</em></li>
+                                    <li><em>The sun <strong>rises</strong> in the east.</em> ('in the east'는 부사구)</li>
+                                    <li><em>He <strong>works</strong> for a big company.</em> ('for a big company'는 부사구)</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="concept-box">
+                                <h4 class="font-semibold text-blue-700">2형식 (S + V + C)</h4>
+                                <p>주어를 보충 설명하는 주격 보어(C)가 필요한 문장입니다. 주어(S)와 주격 보어(C)는 동일한 대상을 가리킵니다 (S=C). 동사는 '불완전 자동사'라고 하며, be동사나 감각동사(look, feel, sound...)가 주로 쓰입니다.</p>
+                                <ul class="list-disc list-inside ml-4 mt-2">
+                                    <li><em>She <strong>is a teacher</strong>.</em> (She = a teacher)</li>
+                                    <li><em>He <strong>became a famous actor</strong>.</em> (He = a famous actor)</li>
+                                    <li><em>This soup <strong>tastes good</strong>.</em> (This soup = good)</li>
+                                </ul>
+                            </div>
+
+                            <div class="concept-box">
+                                <h4 class="font-semibold text-blue-700">3형식 (S + V + O)</h4>
+                                <p>동사의 대상이 되는 목적어(O)가 필요한 문장입니다. '~을/를'로 해석되며, 가장 흔한 문장 구조입니다. 동사는 '완전 타동사'입니다.</p>
+                                <ul class="list-disc list-inside ml-4 mt-2">
+                                    <li><em>I <strong>love you</strong>.</em></li>
+                                    <li><em>She <strong>plays the piano</strong> very well.</em></li>
+                                    <li><em>We <strong>discussed the problem</strong> for an hour.</em></li>
+                                </ul>
+                            </div>
+
+                            <div class="concept-box">
+                                <h4 class="font-semibold text-blue-700">4형식 (S + V + I.O + D.O)</h4>
+                                <p>간접목적어(I.O, ~에게)와 직접목적어(D.O, ~을/를)가 모두 필요한 문장입니다. '주다'라는 의미를 가진 '수여동사' (give, send, buy, show, tell...)가 쓰입니다. 3형식으로 전환할 수 있습니다.</p>
+                                <ul class="list-disc list-inside ml-4 mt-2">
+                                    <li><em>He <strong>gave me a book</strong>.</em> → He gave a book <strong>to</strong> me. (3형식)</li>
+                                    <li><em>My mom <strong>bought me a new phone</strong>.</em> → My mom bought a new phone <strong>for</strong> me. (3형식)</li>
+                                    <li><em>Can you <strong>tell me the truth</strong>?</em> → Can you tell the truth <strong>to</strong> me? (3형식)</li>
+                                </ul>
+                            </div>
+
+                            <div class="concept-box">
+                                <h4 class="font-semibold text-blue-700">5형식 (S + V + O + O.C)</h4>
+                                <p>목적어를 보충 설명하는 목적격 보어(O.C)가 필요한 문장입니다. 목적어(O)와 목적격 보어(O.C) 사이에 의미상 주술 관계가 성립합니다 (O=O.C). 동사는 '불완전 타동사'입니다.</p>
+                                <ul class="list-disc list-inside ml-4 mt-2">
+                                    <li><em>Music <strong>makes me happy</strong>.</em> (me = happy)</li>
+                                    <li><em>We <strong>call him a genius</strong>.</em> (him = a genius)</li>
+                                    <li><em>I <strong>want you to come</strong> back.</em> (you가 to come back 함)</li>
+                                    <li><em>She <strong>saw him cross</strong> the street.</em> (him이 cross 함)</li>
+                                </ul>
+                            </div>
+                             <div class="mt-4 p-4 bg-blue-50 rounded-lg">
+                                 <h4 class="font-semibold mb-2">💡 개념 확인 퀴즈</h4>
+                                 <form id="quiz-p2-c3" class="space-y-2">
+                                     <p>1. (영작) 그들은 그를 영웅이라고 부른다. (5형식)<br><input type="text" class="quiz-input w-full p-1 border rounded mt-1" data-answer="They call him a hero."></p>
+                                     <button type="button" onclick="checkQuiz('quiz-p2-c3')" class="mt-2 px-3 py-1 bg-blue-500 text-white rounded-md hover:bg-blue-600 text-sm">정답 확인</button>
+                                 </form>
+                             </div>
+                        </div>
+                    </details>
+                </div>
+            </section>
             
-            <a href="./workbook.html" class="block p-8 bg-green-500 text-white rounded-xl shadow-lg hover:bg-green-600 transition-transform transform hover:-translate-y-1">
-                <div class="text-3xl mb-4">✍️</div>
-                <h2 class="text-2xl font-bold mb-2">워크북 풀기</h2>
-                <p class="font-light">300개의 심화 문제로 배운 내용을 완벽하게 내 것으로 만듭니다.</p>
-            </a>
+            <section id="part3" class="content-section">
+                <h2 class="text-2xl font-bold text-center mb-6">Part 3: 시제 (Tense)</h2>
+                <div class="space-y-4">
+                    <details class="bg-white rounded-lg shadow-sm" open>
+                        <summary class="text-lg font-semibold flex justify-between items-center p-4"><span>Chapter 4: 단순, 진행, 완료 시제</span><span class="accordion-icon text-blue-500 font-bold">▶</span></summary>
+                        <div class="p-4 border-t text-gray-700 space-y-4">
+                            <p><strong>시제(Tense)</strong>는 동작이나 상태가 일어나는 시간을 나타내는 동사의 형태입니다. 단순히 과거, 현재, 미래로만 나뉘는 것이 아니라, 동작의 진행, 완료 여부에 따라 총 12가지로 세분화됩니다.</p>
+                            
+                            <table>
+                                <thead>
+                                    <tr><th> </th><th>단순</th><th>진행 (be + -ing)</th><th>완료 (have + p.p.)</th><th>완료진행 (have been -ing)</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>현재</strong></td>
+                                        <td>studies</td>
+                                        <td>is studying</td>
+                                        <td>has studied</td>
+                                        <td>has been studying</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>과거</strong></td>
+                                        <td>studied</td>
+                                        <td>was studying</td>
+                                        <td>had studied</td>
+                                        <td>had been studying</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>미래</strong></td>
+                                        <td>will study</td>
+                                        <td>will be studying</td>
+                                        <td>will have studied</td>
+                                        <td>will have been studying</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="concept-box">
+                                <h4 class="font-semibold text-blue-700">1. 단순 시제 (Simple Tenses)</h4>
+                                <ul class="list-disc list-inside ml-4 mt-2 space-y-1">
+                                    <li><strong>현재 단순:</strong> 일반적인 사실, 반복되는 습관, 불변의 진리를 나타냅니다.<br><em>The earth <strong>goes</strong> around the sun. / I <strong>get up</strong> at 7 every day.</em></li>
+                                    <li><strong>과거 단순:</strong> 과거에 시작되어 완전히 끝난 동작이나 상태를 나타냅니다. 명확한 과거 시점 부사와 함께 쓰이는 경우가 많습니다.<br><em>I <strong>met</strong> him yesterday. / The Korean War <strong>broke out</strong> in 1950.</em></li>
+                                    <li><strong>미래 단순:</strong> 미래에 일어날 일에 대한 예측이나 주어의 의지를 나타냅니다. ('will' vs 'be going to')<br><em>I think it <strong>will rain</strong>. (예측) / I'<strong>m going to watch</strong> a movie tonight. (계획)</em></li>
+                                </ul>
+                            </div>
+
+                            <div class="concept-box">
+                                <h4 class="font-semibold text-blue-700">2. 진행 시제 (Progressive/Continuous Tenses)</h4>
+                                <p>특정 시점에 동작이 '진행 중'임을 강조합니다. 일시적인 동작을 나타내는 데 주로 쓰이며, `know`, `love`, `have`(소유) 같은 상태동사는 진행형으로 잘 쓰지 않습니다.</p>
+                                <ul class="list-disc list-inside ml-4 mt-2">
+                                    <li><em>Don't call me now. I'<strong>m studying</strong> for the exam.</em> (현재 진행)</li>
+                                    <li><em>He <strong>was sleeping</strong> when I entered the room.</em> (과거 진행)</li>
+                                    <li><em>This time tomorrow, I <strong>will be flying</strong> to New York.</em> (미래 진행)</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="concept-box">
+                                <h4 class="font-semibold text-blue-700">3. 완료 시제 (Perfect Tenses)</h4>
+                                <p>과거의 한 시점에서 시작된 동작이 특정 기준 시점(현재, 과거, 미래)과 어떤 식으로든 관련이 있음을 나타냅니다.</p>
+                                <ul class="list-disc list-inside ml-4 mt-2 space-y-1">
+                                    <li><strong>현재완료 (have p.p.):</strong> 과거의 일이 현재에 영향을 미치는 경우. (경험, 완료, 계속, 결과)<br>
+                                        <em>I <strong>have been</strong> to Paris before. (경험: ~해 본 적이 있다)</em><br>
+                                        <em>She <strong>has just finished</strong> her homework. (완료: 막 ~했다)</em><br>
+                                        <em>We <strong>have lived</strong> here for 10 years. (계속: 쭉 ~해오고 있다)</em><br>
+                                        <em>He <strong>has lost</strong> his wallet. (결과: 잃어버려서 지금 없다)</em>
+                                    </li>
+                                    <li><strong>과거완료 (had p.p.):</strong> 과거의 특정 시점보다 '더 이전에' 일어난 일을 나타냅니다. (대과거)<br>
+                                        <em>The train <strong>had already left</strong> when I arrived at the station. (내가 도착한 것(과거)보다 기차가 떠난 것이 더 과거)</em>
+                                    </li>
+                                    <li><strong>미래완료 (will have p.p.):</strong> 미래의 특정 시점까지 동작이 '완료'될 것임을 나타냅니다.<br>
+                                        <em>By next year, I <strong>will have graduated</strong> from university. (내년이면 졸업을 완료하게 될 것이다)</em>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+            </section>
+            
+            <section id="part4" class="content-section">
+                <h2 class="text-2xl font-bold text-center mb-6">Part 4: 조동사 (Modal Verbs)</h2>
+                <div class="space-y-4">
+                    <details class="bg-white rounded-lg shadow-sm" open>
+                        <summary class="text-lg font-semibold flex justify-between items-center p-4"><span>Chapter 5: 조동사의 의미와 형태</span><span class="accordion-icon text-blue-500 font-bold">▶</span></summary>
+                        <div class="p-4 border-t text-gray-700 space-y-4">
+                            <p><strong>조동사(Modal Verbs)</strong>는 본동사 앞에 쓰여 문장에 능력, 허가, 의무, 추측, 가능성 등의 특별한 의미를 더해주는 동사입니다. 조동사 뒤에는 반드시 <strong>동사원형</strong>이 와야 하며, 주어의 인칭이나 수에 따라 형태가 변하지 않습니다.</p>
+                            
+                            <table>
+                                <thead>
+                                    <tr><th>조동사</th><th>주요 의미</th><th>예문</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td><strong>Can / Could</strong></td><td>능력, 허가, 요청, 가능성</td><td>I <strong>can</strong> swim. / <strong>Could</strong> you help me? / It <strong>can</strong> be dangerous.</td></tr>
+                                    <tr><td><strong>May / Might</strong></td><td>허가, 약한 추측</td><td><strong>May</strong> I come in? / He <strong>might</strong> be at home. (may보다 약한 추측)</td></tr>
+                                    <tr><td><strong>Will / Would</strong></td><td>미래, 의지, 요청</td><td>I <strong>will</strong> call you back. / <strong>Would</strong> you like some coffee?</td></tr>
+                                    <tr><td><strong>Must / Have to</strong></td><td>강한 의무, 강한 추측</td><td>You <strong>must</strong> finish this. / She looks pale; she <strong>must</strong> be sick.</td></tr>
+                                    <tr><td><strong>Should / Ought to</strong></td><td>의무, 충고, 당연함</td><td>You <strong>should</strong> see a doctor. / He <strong>ought to</strong> apologize.</td></tr>
+                                </tbody>
+                            </table>
+                            
+                            <div class="concept-box">
+                                <h4 class="font-semibold text-blue-700">조동사 + have p.p.: 과거에 대한 이야기</h4>
+                                <p>조동사 뒤에 `have + 과거분사(p.p.)`를 붙이면, 현재가 아닌 '과거의 일'에 대한 추측이나 후회를 나타낼 수 있습니다. 이는 가정법과도 깊은 관련이 있습니다.</p>
+                                <ul class="list-disc list-inside ml-4 mt-2 space-y-2">
+                                    <li>
+                                        <strong>must have p.p.</strong>: (~했음에 틀림없다) - 과거 사실에 대한 강한 확신
+                                        <br><em>The lights are off. They <strong>must have gone</strong> out.</em>
+                                    </li>
+                                    <li>
+                                        <strong>may/might have p.p.</strong>: (~했을지도 모른다) - 과거 사실에 대한 약한 추측
+                                        <br><em>I can't find my keys. I <strong>may have left</strong> them in the car.</em>
+                                    </li>
+                                    <li>
+                                        <strong>can't have p.p.</strong>: (~했을 리가 없다) - 과거 사실에 대한 강한 부정적 추측
+                                        <br><em>He just left. He <strong>can't have arrived</strong> home yet.</em>
+                                    </li>
+                                    <li>
+                                        <strong>should have p.p.</strong>: (~했어야 했는데) - 과거에 하지 않은 일에 대한 후회나 유감
+                                        <br><em>I missed the train. I <strong>should have left</strong> earlier.</em>
+                                    </li>
+                                    <li>
+                                        <strong>needn't have p.p.</strong>: (~할 필요가 없었는데) - 실제로는 했지만 불필요했던 과거 행동
+                                        <br><em>The meeting was canceled. You <strong>needn't have come</strong> all the way.</em>
+                                    </li>
+                                </ul>
+                            </div>
+
+                             <div class="mt-4 p-4 bg-blue-50 rounded-lg">
+                                 <h4 class="font-semibold mb-2">💡 개념 확인 퀴즈</h4>
+                                 <form id="quiz-p4-c5" class="space-y-2">
+                                     <p>1. (영작) 너는 그에게 사과했어야 했다.<br><input type="text" class="quiz-input w-full p-1 border rounded mt-1" data-answer="You should have apologized to him."></p>
+                                     <button type="button" onclick="checkQuiz('quiz-p4-c5')" class="mt-2 px-3 py-1 bg-blue-500 text-white rounded-md hover:bg-blue-600 text-sm">정답 확인</button>
+                                 </form>
+                             </div>
+                        </div>
+                    </details>
+                </div>
+            </section>
+            
+             <section id="part5" class="content-section">
+                <h2 class="text-2xl font-bold text-center mb-6">Part 5: 수동태 (Passive Voice)</h2>
+                <div class="space-y-4">
+                    <details class="bg-white rounded-lg shadow-sm" open>
+                        <summary class="text-lg font-semibold flex justify-between items-center p-4"><span>Chapter 6: 수동태의 형태와 쓰임</span><span class="accordion-icon text-blue-500 font-bold">▶</span></summary>
+                        <div class="p-4 border-t text-gray-700 space-y-4">
+                            <p><strong>수동태(Passive Voice)</strong>는 주어가 동작을 직접 하는 '능동태(Active Voice)'와 달리, 주어가 동작을 '받거나 당하는' 입장을 나타낼 때 사용합니다. 능동태의 목적어가 수동태의 주어가 되는 것이 핵심입니다.</p>
+                            <p class="text-center font-semibold text-lg my-2">능동태: A가 B를 ~하다. ↔ 수동태: B가 A에 의해 ~되다.</p>
+                            <p>수동태의 기본 형태는 <strong class="text-blue-600">be동사 + p.p. (과거분사) (+ by 행위자)</strong> 입니다.</p>
+                            
+                            <div class="concept-box">
+                                <h4 class="font-semibold text-blue-700">수동태를 사용하는 경우</h4>
+                                <ul class="list-disc list-inside ml-4 mt-2 space-y-1">
+                                    <li><strong>행위자가 불분명하거나 중요하지 않을 때:</strong><br><em>My wallet <strong>was stolen</strong> yesterday. (누가 훔쳤는지 모름)</em></li>
+                                    <li><strong>행위자가 너무 당연해서 언급할 필요가 없을 때:</strong><br><em>English <strong>is spoken</strong> all over the world. (by people은 불필요)</em></li>
+                                    <li><strong>행위보다 행위를 당한 대상을 더 강조하고 싶을 때:</strong><br><em>This beautiful bridge <strong>was built</strong> in 1997. (다리가 주된 관심사)</em></li>
+                                    <li><strong>객관적인 사실이나 정보를 전달하여 문어적인 느낌을 줄 때:</strong><br><em>It <strong>is believed</strong> that exercise is good for health.</em></li>
+                                </ul>
+                            </div>
+
+                            <div class="concept-box">
+                                <h4 class="font-semibold text-blue-700">다양한 문장 형식의 수동태</h4>
+                                <ul class="list-disc list-inside ml-4 mt-2 space-y-2">
+                                    <li>
+                                        <strong>4형식 수동태:</strong> 목적어가 2개이므로 2개의 수동태 문장이 가능합니다. 보통 사람(간접목적어)을 주어로 하는 것이 더 자연스럽습니다.
+                                        <br><em>능동: He gave me a book.</em>
+                                        <br><em>수동1: <strong>I was given</strong> a book by him. (자연스러움)</em>
+                                        <br><em>수동2: <strong>A book was given</strong> to me by him. (전치사 to, for, of 필요)</em>
+                                    </li>
+                                    <li>
+                                        <strong>5형식 수동태:</strong> 목적어가 주어로 가고, 목적격 보어가 동사 뒤에 그대로 남습니다. 단, 사역동사나 지각동사의 목적격 보어였던 동사원형은 to부정사로 바뀝니다.
+                                        <br><em>능동: They call him a hero. → 수동: He <strong>is called a hero</strong>.</em>
+                                        <br><em>능동: My parents made me clean the room. → 수동: I <strong>was made to clean</strong> the room.</em>
+                                        <br><em>능동: I saw him enter the building. → 수동: He <strong>was seen to enter</strong> the building.</em>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="concept-box">
+                                <h4 class="font-semibold text-blue-700">시제 및 조동사와의 결합</h4>
+                                <p>수동태는 다양한 시제, 조동사와 자유롭게 결합할 수 있습니다. `be` 동사의 형태만 바꿔주면 됩니다.</p>
+                                <ul class="list-disc list-inside ml-4 mt-2">
+                                    <li><em>진행형 수동태 (be being p.p.): The room <strong>is being cleaned</strong> now.</em></li>
+                                    <li><em>완료형 수동태 (have been p.p.): The report <strong>has been finished</strong>.</em></li>
+                                    <li><em>조동사 수동태 (modal + be p.p.): The work <strong>must be finished</strong> by noon.</em></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+            </section>
+            
+            <section id="part6" class="content-section">
+                <h2 class="text-2xl font-bold text-center mb-6">Part 6: 준동사 (Verbals)</h2>
+                <div class="space-y-4">
+                    <details class="bg-white rounded-lg shadow-sm" open>
+                        <summary class="text-lg font-semibold flex justify-between items-center p-4"><span>Chapter 7: to부정사와 동명사</span><span class="accordion-icon text-blue-500 font-bold">▶</span></summary>
+                        <div class="p-4 border-t text-gray-700 space-y-4">
+                            <p><strong>준동사</strong>란 동사에서 파생되었지만 문장에서 명사, 형용사, 부사 등 다른 품사의 역할을 하는 말을 의미합니다. 동사의 성질을 가지고 있어 의미상의 주어나 목적어, 수식어를 가질 수 있습니다. 대표적으로 <strong>to부정사, 동명사, 분사</strong>가 있습니다.</p>
+                            
+                            <div class="concept-box">
+                                <h4 class="font-semibold text-blue-700">to-부정사 (to + 동사원형)</h4>
+                                <p>명사, 형용사, 부사 역할을 모두 할 수 있어 '정해지지 않은 말'이라는 의미를 가집니다.</p>
+                                <ul class="list-disc list-inside ml-4 mt-2 space-y-1">
+                                    <li><strong>명사적 용법 (~하는 것):</strong> 주어, 목적어, 보어로 쓰입니다.<br><em><strong>To see</strong> is <strong>to believe</strong>. (보는 것이 믿는 것이다 - 주어, 보어)</em><br><em>I want <strong>to go</strong> home. (나는 집에 가는 것을 원한다 - 목적어)</em></li>
+                                    <li><strong>형용사적 용법 (~할):</strong> 명사 뒤에서 수식합니다.<br><em>I have a lot of homework <strong>to do</strong>. (해야 할 많은 숙제)</em><br><em>He needs a friend <strong>to talk with</strong>. (함께 이야기할 친구)</em></li>
+                                    <li><strong>부사적 용법 (다양한 의미):</strong> 목적, 감정의 원인, 결과, 판단의 근거 등을 나타냅니다.<br><em>I study hard <strong>to pass the exam</strong>. (목적: ~하기 위해)</em><br><em>I am happy <strong>to meet you</strong>. (감정의 원인: ~해서)</em><br><em>He grew up <strong>to be a doctor</strong>. (결과: 자라서 ~가 되다)</em></li>
+                                </ul>
+                            </div>
+
+                            <div class="concept-box">
+                                <h4 class="font-semibold text-blue-700">동명사 (동사원형 + -ing)</h4>
+                                <p>동사를 명사로 바꾼 것으로, 문장에서 명사처럼 주어, 목적어, 보어 역할을 합니다.</p>
+                                <ul class="list-disc list-inside ml-4 mt-2 space-y-1">
+                                    <li><strong>주어:</strong> <em><strong>Studying English</strong> is fun.</em></li>
+                                    <li><strong>보어:</strong> <em>My hobby is <strong>collecting stamps</strong>.</em></li>
+                                    <li><strong>목적어:</strong> <em>I enjoy <strong>listening to music</strong>.</em></li>
+                                    <li><strong>전치사의 목적어:</strong> <em>Thank you for <strong>coming</strong>.</em></li>
+                                </ul>
+                            </div>
+
+                            <div class="concept-box">
+                                <h4 class="font-semibold text-blue-700">목적어로 to-부정사 vs. 동명사</h4>
+                                <p>어떤 동사들은 목적어로 to-부정사만, 어떤 동사들은 동명사만 취합니다. 둘 다 취하지만 의미가 달라지는 경우도 있어 주의해야 합니다.</p>
+                                <table>
+                                    <thead>
+                                        <tr><th>구분</th><th>동사 종류</th><th>예문</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td><strong>To-부정사만</strong> (미래지향적)</td><td>want, hope, wish, plan, decide, expect, promise...</td><td>I <strong>decided to study</strong> abroad.</td></tr>
+                                        <tr><td><strong>동명사만</strong> (과거/일반적)</td><td>enjoy, finish, stop, quit, mind, avoid, admit...</td><td>He <strong>admitted stealing</strong> the money.</td></tr>
+                                        <tr><td rowspan=2><strong>의미가 달라지는 동사</strong></td>
+                                            <td>remember/forget <strong>to do</strong> (미래: ~할 것을 기억/망각)</td><td>Remember <strong>to lock</strong> the door.</td></tr>
+                                            <td>remember/forget <strong>doing</strong> (과거: ~했던 것을 기억/망각)</td><td>I remember <strong>seeing</strong> him before.</td></tr>
+                                        <tr>
+                                            <td>stop <strong>to do</strong> (~하기 위해 멈추다)</td><td>He stopped <strong>to smoke</strong>.</td></tr>
+                                            <td>stop <strong>doing</strong> (~하는 것을 그만두다)</td><td>He stopped <strong>smoking</strong>.</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </details>
+                    <details class="bg-white rounded-lg shadow-sm">
+                        <summary class="text-lg font-semibold flex justify-between items-center p-4"><span>Chapter 8: 분사</span><span class="accordion-icon text-blue-500 font-bold">▶</span></summary>
+                        <div class="p-4 border-t text-gray-700 space-y-4">
+                            <p><strong>분사(Participle)</strong>는 동사에서 파생되었지만 문장에서 형용사 역할을 하는 준동사입니다. 명사를 수식하거나 보어로 쓰입니다. '능동/진행'의 의미를 갖는 <strong>현재분사(-ing)</strong>와 '수동/완료'의 의미를 갖는 <strong>과거분사(p.p.)</strong>가 있습니다.</p>
+
+                            <div class="concept-box">
+                                <h4 class="font-semibold text-blue-700">1. 분사의 형용사적 용법</h4>
+                                <p>명사를 앞이나 뒤에서 수식하며, 수식받는 명사와의 관계가 능동/진행이면 현재분사, 수동/완료이면 과거분사를 씁니다.</p>
+                                <table>
+                                    <thead>
+                                        <tr><th>구분</th><th>의미</th><th>예시</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>현재분사 (-ing)</strong></td>
+                                            <td>능동/진행 (~하는, ~하고 있는)</td>
+                                            <td>a <strong>sleeping</strong> baby (잠자고 있는 아기)<br>The girl <strong>dancing</strong> on the stage is my sister.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>과거분사 (p.p.)</strong></td>
+                                            <td>수동/완료 (~된, ~해진)</td>
+                                            <td>a <strong>broken</strong> window (깨진 창문)<br>This is a car <strong>made</strong> in Korea.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <p class="mt-2"><strong>Tip:</strong> 감정을 나타내는 동사(interest, excite, bore...)의 경우, 감정을 유발하면 현재분사(-ing), 감정을 느끼면 과거분사(-ed)를 씁니다.<br><em>The game was <strong>exciting</strong>. / I was <strong>excited</strong>.</em></p>
+                            </div>
+                            
+                            <div class="concept-box">
+                                <h4 class="font-semibold text-blue-700">2. 분사구문 (Participle Clauses)</h4>
+                                <p>부사절(접속사+주어+동사)을 분사를 이용해 간결하게 줄인 구문입니다. 문장의 의미를 더욱 풍부하고 세련되게 만들어 줍니다.</p>
+                                <p><strong>만드는 법:</strong> ① 부사절의 접속사를 생략한다. ② 부사절의 주어가 주절의 주어와 같으면 생략한다. ③ 부사절의 동사를 현재분사(-ing)로 바꾼다.</p>
+                                <ul class="list-disc list-inside ml-4 mt-2 space-y-2">
+                                    <li>
+                                        <strong>시간:</strong> <em><strong>After I finished</strong> my homework, I watched TV.</em><br>
+                                        → <em><strong>Finishing</strong> my homework, I watched TV.</em>
+                                    </li>
+                                    <li>
+                                        <strong>이유:</strong> <em><strong>As I felt</strong> tired, I went to bed early.</em><br>
+                                        → <em><strong>Feeling</strong> tired, I went to bed early.</em>
+                                    </li>
+                                    <li>
+                                        <strong>동시동작:</strong> <em><strong>While I was listening</strong> to music, I studied math.</em><br>
+                                        → <em><strong>Listening</strong> to music, I studied math.</em>
+                                    </li>
+                                    <li>
+                                        <strong>수동 분사구문:</strong> `Being p.p.`에서 `Being`은 보통 생략됩니다.<br>
+                                        <em><strong>As it was written</strong> in a hurry, the letter has many mistakes.</em><br>
+                                        → <em><strong>(Being) Written</strong> in a hurry, the letter has many mistakes.</em>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="mt-4 p-4 bg-blue-50 rounded-lg">
+                                <h4 class="font-semibold mb-2">💡 개념 확인 퀴즈</h4>
+                                <form id="quiz-p6-c8" class="space-y-2">
+                                    <p>1. (영작) 피곤했기 때문에, 그는 일찍 잠자리에 들었다. (분사구문)<br><input type="text" class="quiz-input w-full p-1 border rounded mt-1" data-answer="Feeling tired, he went to bed early."></p>
+                                    <button type="button" onclick="checkQuiz('quiz-p6-c8')" class="mt-2 px-3 py-1 bg-blue-500 text-white rounded-md hover:bg-blue-600 text-sm">정답 확인</button>
+                                </form>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+            </section>
+
+             <section id="part7" class="content-section">
+                <h2 class="text-2xl font-bold text-center mb-6">Part 7: 수식어 (Modifiers)</h2>
+                <div class="space-y-4">
+                    <details class="bg-white rounded-lg shadow-sm" open>
+                        <summary class="text-lg font-semibold flex justify-between items-center p-4"><span>Chapter 9: 비교 구문</span><span class="accordion-icon text-blue-500 font-bold">▶</span></summary>
+                        <div class="p-4 border-t text-gray-700 space-y-4">
+                            <p><strong>비교 구문</strong>은 형용사나 부사를 이용하여 둘 이상의 대상을 비교하는 표현 방식입니다. 두 대상의 정도가 같음을 나타내는 <strong>원급 비교</strong>, 어느 한쪽이 더 우월함을 나타내는 <strong>비교급</strong>, 셋 이상 중에서 최고임을 나타내는 <strong>최상급</strong>이 있습니다.</p>
+
+                            <div class="concept-box">
+                                <h4 class="font-semibold text-blue-700">1. 원급 비교 (as ~ as)</h4>
+                                <p>두 대상의 정도가 동등함을 나타내며 '...만큼 ~한'으로 해석됩니다. `as`와 `as` 사이에는 형용사나 부사의 원급 형태가 들어갑니다.</p>
+                                <ul class="list-disc list-inside ml-4 mt-2 space-y-1">
+                                    <li><em>He is <strong>as tall as</strong> his father.</em> (그는 그의 아버지 만큼 키가 크다.)</li>
+                                    <li><em>She can run <strong>as fast as</strong> I can.</em> (그녀는 나만큼 빨리 달릴 수 있다.)</li>
+                                    <li><strong>부정문:</strong> `not as ~ as` 또는 `not so ~ as`를 사용하며, '...만큼 ~하지 않은' 이라는 의미입니다.
+                                        <br><em>I am <strong>not as rich as</strong> him. / I am <strong>not so rich as</strong> him.</em></li>
+                                    <li><strong>관용 표현:</strong> `as ~ as possible` (가능한 한 ~하게), `as ~ as ever` (여전히 ~한)
+                                        <br><em>Please come <strong>as soon as possible</strong>.</em></li>
+                                </ul>
+                            </div>
+                            
+                            <div class="concept-box">
+                                <h4 class="font-semibold text-blue-700">2. 비교급 (-er than / more ~ than)</h4>
+                                <p>두 대상을 비교하여 한쪽이 더 우월하거나 열등함을 나타냅니다. '...보다 더 ~한'으로 해석됩니다. 짧은 단어는 `-er`, 긴 단어(2음절 이상)는 `more`를 붙입니다.</p>
+                                <ul class="list-disc list-inside ml-4 mt-2 space-y-1">
+                                    <li><em>She is <strong>taller than</strong> me.</em> (그녀는 나보다 키가 더 크다.)</li>
+                                    <li><em>This book is <strong>more interesting than</strong> that one.</em> (이 책이 저 책보다 더 흥미롭다.)</li>
+                                    <li><strong>비교급 강조:</strong> `very`는 비교급을 수식할 수 없습니다. 대신 `much, far, still, a lot, even` 등을 사용하여 '훨씬' 더 ~하다는 의미를 나타냅니다.
+                                        <br><em>He is <strong>much smarter than</strong> his brother.</em></li>
+                                </ul>
+                            </div>
+
+                            <div class="concept-box">
+                                <h4 class="font-semibold text-blue-700">3. 최상급 (the -est / the most ~)</h4>
+                                <p>셋 이상의 대상 중에서 정도가 가장 높음을 나타냅니다. '가장 ~한'으로 해석되며, 보통 `the`와 함께 사용됩니다. 비교 범위는 `in + 단수명사(장소/집단)` 또는 `of + 복수명사`로 나타냅니다.</p>
+                                <ul class="list-disc list-inside ml-4 mt-2 space-y-1">
+                                    <li><em>He is <strong>the tallest</strong> student in his class.</em> (그는 반에서 가장 키가 큰 학생이다.)</li>
+                                    <li><em>This is <strong>the most expensive</strong> watch in this store.</em> (이것은 이 가게에서 가장 비싼 시계이다.)</li>
+                                    <li><strong>최상급과 현재완료:</strong> '지금까지 ~해 본 것 중에 가장 ...한' 이라는 의미로 자주 함께 쓰입니다.
+                                        <br><em>She is <strong>the kindest</strong> person I have ever met.</em></li>
+                                </ul>
+                            </div>
+                            
+                            <div class="concept-box">
+                                <h4 class="font-semibold text-blue-700">4. 주요 비교 구문: The 비교급, The 비교급</h4>
+                                <p>'~하면 할수록, 더욱 ~하다'라는 의미로, 앞선 내용의 정도 변화가 뒷선 내용의 정도 변화에 비례적인 영향을 미침을 나타냅니다.</p>
+                                <ul class="list-disc list-inside ml-4 mt-2">
+                                    <li><em><strong>The more</strong> you have, <strong>the more</strong> you want.</em> (더 많이 가질수록, 더 많이 원한다.)</li>
+                                    <li><em><strong>The higher</strong> we climbed, <strong>the colder</strong> it became.</em> (더 높이 올라갈수록, 날씨는 더 추워졌다.)</li>
+                                    <li><em><strong>The more</strong> you practice, <strong>the better</strong> you will become.</em> (연습을 더 많이 할수록, 너는 더 나아질 것이다.)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+            </section>
+            
+            <section id="part8" class="content-section">
+                <h2 class="text-2xl font-bold text-center mb-6">Part 8: 접속사 (Conjunctions)</h2>
+                <div class="space-y-4">
+                    <details class="bg-white rounded-lg shadow-sm" open>
+                        <summary class="text-lg font-semibold flex justify-between items-center p-4"><span>Chapter 10: 등위, 종속, 상관접속사</span><span class="accordion-icon text-blue-500 font-bold">▶</span></summary>
+                        <div class="p-4 border-t text-gray-700 space-y-4">
+                            <p><strong>접속사(Conjunction)</strong>는 단어와 단어, 구와 구, 절과 절을 문법적으로 연결하여 문장을 더 길고 풍부하게 만들어주는 다리 역할을 합니다. 접속사는 연결하는 대상의 관계에 따라 등위, 종속, 상관 접속사로 나뉩니다.</p>
+
+                            <div class="concept-box">
+                                <h4 class="font-semibold text-blue-700">1. 등위접속사 (Coordinating Conjunctions)</h4>
+                                <p>문법적으로 대등한 관계에 있는 단어, 구, 절을 연결합니다. 보통 'FANBOYS'로 외웁니다.</p>
+                                <ul class="list-disc list-inside ml-4 mt-2 space-y-1">
+                                    <li><strong>For (왜냐하면):</strong> I told her to leave, <strong>for</strong> I was very tired.</li>
+                                    <li><strong>And (그리고):</strong> I like apples <strong>and</strong> bananas.</li>
+                                    <li><strong>Nor (~도 또한 아니다):</strong> He doesn't like it, <strong>nor</strong> do I. (뒤에 도치 발생)</li>
+                                    <li><strong>But (그러나):</strong> He is smart <strong>but</strong> lazy.</li>
+                                    <li><strong>Or (또는):</strong> Do you want coffee <strong>or</strong> tea?</li>
+                                    <li><strong>Yet (그럼에도 불구하고):</strong> It's a simple <strong>yet</strong> powerful idea.</li>
+                                    <li><strong>So (그래서):</strong> It was raining, <strong>so</strong> I took an umbrella.</li>
+                                </ul>
+                            </div>
+
+                            <div class="concept-box">
+                                <h4 class="font-semibold text-blue-700">2. 종속접속사 (Subordinating Conjunctions)</h4>
+                                <p>하나의 절(종속절)을 다른 절(주절)에 종속시켜 의미를 보충합니다. 종속절이 문장에서 하는 역할에 따라 명사절 접속사와 부사절 접속사로 나뉩니다.</p>
+                                <ul class="list-disc list-inside ml-4 mt-2 space-y-2">
+                                    <li>
+                                        <strong>명사절 접속사:</strong> 절 전체가 문장에서 주어, 목적어, 보어 역할을 합니다.
+                                        <br><strong>that (~라는 것):</strong> <em><strong>That he is honest</strong> is true. (주어) / I know <strong>that he is honest</strong>. (목적어)</em>
+                                        <br><strong>whether/if (~인지 아닌지):</strong> <em><strong>Whether he will come</strong> is not certain. (주어) / I wonder <strong>if you can help me</strong>. (목적어)</em>
+                                    </li>
+                                    <li>
+                                        <strong>부사절 접속사:</strong> 주절에 시간, 이유, 조건, 양보 등의 구체적인 정보를 더합니다.
+                                        <br><strong>시간 (when, while, after...):</strong> <em>Call me <strong>when you are ready</strong>.</em>
+                                        <br><strong>이유 (because, as, since...):</strong> <em>I stayed home <strong>because it was raining</strong>.</em>
+                                        <br><strong>조건 (if, unless...):</strong> <em><strong>If you study hard</strong>, you will pass.</em>
+                                        <br><strong>양보 (though, although...):</strong> <em><strong>Although he was tired</strong>, he kept working.</em>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="concept-box">
+                                <h4 class="font-semibold text-blue-700">3. 상관접속사 (Correlative Conjunctions)</h4>
+                                <p>두 개의 단어가 짝을 이루어 사용되며, 등위접속사처럼 대등한 요소를 연결합니다. 주어 자리에 올 때 수일치에 주의해야 합니다.</p>
+                                <ul class="list-disc list-inside ml-4 mt-2 space-y-1">
+                                    <li><strong>both A and B:</strong> A와 B 둘 다 (항상 복수 취급) <br><em><strong>Both he and I</strong> are interested in music.</em></li>
+                                    <li><strong>either A or B:</strong> A 또는 B 둘 중 하나 (B에 수일치) <br><em><strong>Either you or she</strong> has to go.</em></li>
+                                    <li><strong>neither A nor B:</strong> A와 B 둘 다 아님 (B에 수일치) <br><em><strong>Neither my parents nor my sister</strong> agrees with me.</em></li>
+                                    <li><strong>not only A but also B:</strong> A뿐만 아니라 B도 (B에 수일치) <br><em><strong>Not only I but also he</strong> is responsible for it.</em></li>
+                                    <li><strong>B as well as A:</strong> A뿐만 아니라 B도 (B에 수일치) <br><em><strong>He as well as I</strong> is responsible for it.</em></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+            </section>
+            
+            <section id="part9" class="content-section">
+                <h2 class="text-2xl font-bold text-center mb-6">Part 9: 관계사 (Relatives)</h2>
+                <div class="space-y-4">
+                    <details class="bg-white rounded-lg shadow-sm" open>
+                        <summary class="text-lg font-semibold flex justify-between items-center p-4"><span>Chapter 11: 관계대명사</span><span class="accordion-icon text-blue-500 font-bold">▶</span></summary>
+                        <div class="p-4 border-t text-gray-700 space-y-4">
+                            <p><strong>관계대명사(Relative Pronoun)</strong>는 두 문장을 연결하는 '접속사'의 역할과 앞선 명사(선행사)를 대신하는 '대명사'의 역할을 동시에 수행합니다. 관계대명사가 이끄는 절(관계사절)은 선행사를 꾸며주는 형용사절이 됩니다.</p>
+                            
+                            <table>
+                                <thead>
+                                    <tr><th>선행사</th><th>주격 (S)</th><th>소유격 (of)</th><th>목적격 (O)</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td><strong>사람</strong></td><td>who / that</td><td>whose</td><td>whom / who / that</td></tr>
+                                    <tr><td><strong>사물/동물</strong></td><td>which / that</td><td>whose / of which</td><td>which / that</td></tr>
+                                </tbody>
+                            </table>
+                            
+                            <div class="concept-box">
+                                <h4 class="font-semibold text-blue-700">관계대명사의 종류와 용법</h4>
+                                <ul class="list-disc list-inside ml-4 mt-2 space-y-2">
+                                    <li><strong>주격 관계대명사:</strong> 관계사절 안에서 주어 역할을 합니다. <br><em>I know a girl. + <strong>She</strong> lives next door. → I know a girl <strong>who lives</strong> next door.</em></li>
+                                    <li><strong>목적격 관계대명사:</strong> 관계사절 안에서 목적어 역할을 하며, 생략할 수 있습니다.<br><em>This is the book. + I bought <strong>it</strong>. → This is the book <strong>(which) I bought</strong>.</em></li>
+                                    <li><strong>소유격 관계대명사:</strong> '~의'라는 소유의 의미를 나타냅니다.<br><em>I have a friend. + <strong>His</strong> father is a pilot. → I have a friend <strong>whose father</strong> is a pilot.</em></li>
+                                </ul>
+                            </div>
+
+                            <div class="concept-box">
+                                <h4 class="font-semibold text-blue-700">관계대명사 what vs. that</h4>
+                                <p><strong>what</strong>은 그 자체에 선행사(the thing which)를 포함하고 있어 '~하는 것'으로 해석되는 명사절을 이끕니다. 반면, <strong>that</strong>은 선행사를 수식하는 형용사절을 이끕니다.</p>
+                                <ul class="list-disc list-inside ml-4 mt-2">
+                                    <li><strong>what (명사절):</strong> <em><strong>What he said</strong> is true.</em> (선행사 없음, what절이 문장의 주어)</li>
+                                    <li><strong>that (형용사절):</strong> <em>I know the fact <strong>that he said</strong>.</em> (선행사 the fact를 수식)</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="concept-box">
+                                <h4 class="font-semibold text-blue-700">계속적 용법 (Non-restrictive)</h4>
+                                <p>관계대명사 앞에 콤마(,)를 사용하여, 선행사에 대한 부가적인 설명을 덧붙이는 용법입니다. 앞에서부터 순서대로 해석하며, `that`과 `what`은 계속적 용법으로 쓸 수 없습니다.</p>
+                                <ul class="list-disc list-inside ml-4 mt-2">
+                                    <li><strong>제한적 용법 (한정):</strong> <em>He has two sons <strong>who became doctors</strong>.</em> (의사가 된 아들이 둘 있다. 다른 아들이 더 있을 수도 있음)</li>
+                                    <li><strong>계속적 용법 (부가 설명):</strong> <em>He has two sons<strong>, who became doctors</strong>.</em> (아들이 둘 있는데, 그들은 의사가 되었다. 아들은 총 둘 뿐임)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </details>
+                    <details class="bg-white rounded-lg shadow-sm">
+                        <summary class="text-lg font-semibold flex justify-between items-center p-4"><span>Chapter 12: 관계부사</span><span class="accordion-icon text-blue-500 font-bold">▶</span></summary>
+                        <div class="p-4 border-t text-gray-700 space-y-4">
+                            <p><strong>관계부사(Relative Adverb)</strong>는 '접속사 + 부사'의 역할을 하며, 두 문장을 연결하고 선행사를 수식하는 형용사절을 이끕니다. 관계대명사와 달리 관계부사 뒤에는 주어, 동사, 목적어 등을 모두 갖춘 <strong>완전한 문장</strong>이 옵니다.</p>
+                            <p class="text-center font-semibold my-2">관계부사 = 전치사 + 관계대명사</p>
+
+                            <table>
+                                <thead>
+                                    <tr><th>선행사</th><th>관계부사</th><th>= 전치사 + 관계대명사</th><th>예문</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td><strong>장소</strong> (place, city...)</td><td><strong>where</strong></td><td>in / at / on which</td><td>This is the house <strong>where</strong> I live.</td></tr>
+                                    <tr><td><strong>시간</strong> (time, day...)</td><td><strong>when</strong></td><td>in / at / on which</td><td>I remember the day <strong>when</strong> we first met.</td></tr>
+                                    <tr><td><strong>이유</strong> (reason)</td><td><strong>why</strong></td><td>for which</td><td>Tell me the reason <strong>why</strong> you were late.</td></tr>
+                                    <tr><td><strong>방법</strong> (the way)</td><td><strong>how</strong></td><td>in which</td><td>This is <strong>how</strong> he solved the problem.</td></tr>
+                                </tbody>
+                            </table>
+                            
+                            <div class="concept-box">
+                                <h4 class="font-semibold text-blue-700">관계부사의 특징</h4>
+                                <ul class="list-disc list-inside ml-4 mt-2 space-y-2">
+                                    <li><strong>완전한 문장:</strong> 관계부사 뒤에는 빠진 성분 없이 완전한 절이 옵니다.<br><em>This is the house where <strong>I live</strong>. (I live는 1형식으로 완전)</em><br>cf. 관계대명사: <em>This is the house which <strong>I built</strong>. (built의 목적어가 없음)</em></li>
+                                    <li><strong>전치사 + 관계대명사로 전환:</strong> 관계부사는 '전치사+관계대명사'로 바꿔 쓸 수 있습니다.<br><em>This is the house <strong>where</strong> I live. = This is the house <strong>in which</strong> I live.</em></li>
+                                    <li><strong>선행사 또는 관계부사의 생략:</strong> 의미가 명확할 경우 선행사나 관계부사 둘 중 하나를 생략할 수 있습니다. (단, the way와 how는 절대 함께 쓰지 않습니다.)<br><em>Tell me (the reason) <strong>why</strong> you did it. / Tell me <strong>the reason</strong> (why) you did it.</em><br><em>This is <strong>the way</strong> he did it. / This is <strong>how</strong> he did it. (둘 중 하나만 사용)</em></li>
+                                </ul>
+                            </div>
+                            
+                            <div class="mt-4 p-4 bg-blue-50 rounded-lg">
+                                <h4 class="font-semibold mb-2">💡 개념 확인 퀴즈</h4>
+                                <form id="quiz-p9-c12" class="space-y-2">
+                                    <p>1. (영작) 이것이 내가 그를 좋아하는 이유이다.<br><input type="text" class="quiz-input w-full p-1 border rounded mt-1" data-answer="This is the reason why I like him."></p>
+                                    <button type="button" onclick="checkQuiz('quiz-p9-c12')" class="mt-2 px-3 py-1 bg-blue-500 text-white rounded-md hover:bg-blue-600 text-sm">정답 확인</button>
+                                </form>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+            </section>
+            
+            <section id="part10" class="content-section">
+                <h2 class="text-2xl font-bold text-center mb-6">Part 10: 특수 구문</h2>
+                <div class="space-y-4">
+                    <details class="bg-white rounded-lg shadow-sm" open>
+                        <summary class="text-lg font-semibold flex justify-between items-center p-4"><span>Chapter 13: 가정법</span><span class="accordion-icon text-blue-500 font-bold">▶</span></summary>
+                        <div class="p-4 border-t text-gray-700 space-y-4">
+                            <p><strong>가정법(Subjunctive Mood)</strong>은 '만약 ~라면 ...일 텐데'와 같이, 현재나 과거의 사실과 반대되는 상황을 가정하거나 실현 가능성이 매우 낮은 일을 상상하여 말하는 표현 방식입니다. 직설법과 달리 동사의 시제를 실제 시간보다 한 단계 과거로 쓰는 것이 핵심입니다.</p>
+
+                            <div class="concept-box">
+                                <h4 class="font-semibold text-blue-700">가정법 과거: 현재 사실의 반대</h4>
+                                <p>형태는 과거 시제를 쓰지만, 의미는 '현재' 사실과 반대되는 가정을 나타냅니다. '만약 지금 ~라면, 지금 ...일 텐데'로 해석됩니다.</p>
+                                <p class="font-semibold my-2">If + 주어 + 동사의 과거형, 주어 + would/should/could/might + 동사원형</p>
+                                <ul class="list-disc list-inside ml-4 mt-2">
+                                    <li><em>If I <strong>were</strong> a bird, I <strong>could fly</strong> to you.</em> (직설법: As I am not a bird, I cannot fly to you.)</li>
+                                    <li><em>If he <strong>knew</strong> her number, he <strong>would call</strong> her.</em> (직설법: As he doesn't know her number, he won't call her.)</li>
+                                    <li><strong>Tip:</strong> 가정법 과거의 If절에서 be동사는 주어의 인칭과 수에 상관없이 `were`를 쓰는 것이 원칙입니다.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="concept-box">
+                                <h4 class="font-semibold text-blue-700">가정법 과거완료: 과거 사실의 반대</h4>
+                                <p>과거에 있었던 사실과 반대되는 상황을 가정하며, '만약 그때 ~했더라면, 그때 ...했을 텐데'라고 해석됩니다.</p>
+                                <p class="font-semibold my-2">If + 주어 + had p.p., 주어 + would/should/could/might + have p.p.</p>
+                                <ul class="list-disc list-inside ml-4 mt-2">
+                                    <li><em>If I <strong>had studied</strong> harder, I <strong>could have passed</strong> the exam.</em> (직설법: As I didn't study harder, I couldn't pass the exam.)</li>
+                                    <li><em>If you <strong>had come</strong> to the party, you <strong>would have met</strong> her.</em> (직설법: As you didn't come to the party, you didn't meet her.)</li>
+                                </ul>
+                            </div>
+                            
+                             <div class="concept-box">
+                                <h4 class="font-semibold text-blue-700">I wish / as if 가정법</h4>
+                                <p>`I wish` 뒤에는 현재의 이룰 수 없는 소망을, `as if` 뒤에는 사실이 아닌 비유를 나타낼 때 가정법 시제를 사용합니다.</p>
+                                <ul class="list-disc list-inside ml-4 mt-2">
+                                    <li><strong>I wish + 가정법 과거:</strong> (현재) ~라면 좋을 텐데 <br><em>I wish I <strong>were</strong> taller.</em></li>
+                                    <li><strong>I wish + 가정법 과거완료:</strong> (과거에) ~했더라면 좋았을 텐데 <br><em>I wish I <strong>hadn't said</strong> that.</em></li>
+                                     <li><strong>as if + 가정법 과거:</strong> 마치 (현재) ~인 것처럼 <br><em>He talks <strong>as if</strong> he <strong>knew</strong> everything.</em></li>
+                                     <li><strong>as if + 가정법 과거완료:</strong> 마치 (과거에) ~였던 것처럼 <br><em>She looked <strong>as if</strong> she <strong>had seen</strong> a ghost.</em></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </details>
+                    <details class="bg-white rounded-lg shadow-sm">
+                        <summary class="text-lg font-semibold flex justify-between items-center p-4"><span>Chapter 14: 도치와 강조</span><span class="accordion-icon text-blue-500 font-bold">▶</span></summary>
+                        <div class="p-4 border-t text-gray-700 space-y-4">
+                            <p><strong>도치(Inversion)</strong>는 문장의 특정 부분을 강조하거나 문법적인 이유로 주어와 동사의 정상적인 어순(S+V)을 바꾸는(V+S 또는 Aux+S+V) 것을 말합니다. <strong>강조(Emphasis)</strong>는 문장의 특정 요소를 부각시켜 의미를 명확하게 전달하는 기법입니다.</p>
+
+                            <div class="concept-box">
+                                <h4 class="font-semibold text-blue-700">1. 도치 (Inversion)</h4>
+                                <p>도치가 일어나는 대표적인 경우들은 다음과 같습니다.</p>
+                                <ul class="list-disc list-inside ml-4 mt-2 space-y-2">
+                                    <li>
+                                        <strong>부정어/준부정어구 문두 이동:</strong> `Never, Not only, Little, Rarely, Seldom` 등 부정의 의미를 갖는 부사(구)가 문장 맨 앞으로 오면, 의문문처럼 `조동사/be동사 + 주어 + 동사원형` 순서로 도치됩니다.
+                                        <br><em><strong>Never have I seen</strong> such a beautiful sight.</em> (원문: I have never seen...)
+                                        <br><em><strong>Not only did he</strong> apologize, but he also bought me a gift.</em> (원문: He not only apologized...)
+                                    </li>
+                                    <li>
+                                        <strong>장소/방향 부사구 문두 이동:</strong> 장소나 방향을 나타내는 부사구가 문장 맨 앞으로 오면 주어와 동사의 위치가 바뀝니다. (V+S)
+                                        <br><em><strong>On the hill stands</strong> a castle.</em> (원문: A castle stands on the hill.)
+                                        <br><em><strong>Here comes</strong> the bus.</em> (원문: The bus comes here.)
+                                    </li>
+                                     <li>
+                                        <strong>`So / Neither / Nor` 동의 표현:</strong> `So+V+S` (긍정 동의), `Neither/Nor+V+S` (부정 동의)
+                                        <br><em>A: I am hungry. B: <strong>So am I</strong>.</em>
+                                        <br><em>A: I don't like horror movies. B: <strong>Neither do I</strong>.</em>
+                                    </li>
+                                    <li>
+                                        <strong>가정법 `If` 생략:</strong> 가정법 문장에서 If를 생략하면 주어와 동사가 도치됩니다.
+                                        <br><em><strong>Were I</strong> you, I would not do that.</em> (= If I were you...)
+                                        <br><em><strong>Had I known</strong> the truth, I would have told you.</em> (= If I had known...)
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="concept-box">
+                                <h4 class="font-semibold text-blue-700">2. 강조 (Emphasis)</h4>
+                                <p>문장의 특정 부분을 강조하여 '바로 그 ...'라는 뉘앙스를 줍니다.</p>
+                                <ul class="list-disc list-inside ml-4 mt-2 space-y-2">
+                                     <li>
+                                        <strong>It is ~ that 강조 구문:</strong> 강조하고 싶은 말을 `It is`와 `that` 사이에 넣습니다. 사람, 사물, 시간, 장소 등 거의 모든 것을 강조할 수 있습니다. (동사 제외)
+                                        <br><em><strong>It was Tom</strong> that broke the window.</em> (창문을 깬 것은 바로 탐이었다. - 주어 강조)
+                                        <br><em><strong>It was yesterday</strong> that I met her.</em> (내가 그녀를 만난 것은 바로 어제였다. - 시간 부사구 강조)
+                                    </li>
+                                    <li>
+                                        <strong>do/does/did 동사 강조:</strong> 일반동사 앞에 `do/does/did`를 넣어 '정말로, 진짜로'라는 의미로 동사를 강조합니다.
+                                        <br><em>I <strong>do love</strong> you.</em> (나는 정말로 너를 사랑한다.)
+                                        <br><em>He <strong>did try</strong> his best.</em> (그는 정말로 최선을 다했다.)
+                                    </li>
+                                     <li>
+                                        <strong>재귀대명사 강조:</strong> 주어나 목적어 뒤에 재귀대명사를 붙여 '직접, 몸소'라는 의미로 강조합니다.
+                                        <br><em>I built this house <strong>myself</strong>.</em>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+             </section>
         </main>
 
-        <footer class="mt-12 text-sm text-gray-400">
-            <p>© English Grammar Hub Project</p>
-        </footer>
     </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const navTabs = document.querySelectorAll('.nav-tab');
+        const contentSections = document.querySelectorAll('.content-section');
+
+        function updateContent(targetId) {
+            navTabs.forEach(tab => {
+                tab.classList.toggle('active', tab.dataset.target === targetId);
+            });
+            contentSections.forEach(section => {
+                section.classList.toggle('active', '#' + section.id === targetId);
+            });
+        }
+
+        const navigation = document.getElementById('navigation');
+        navigation.addEventListener('click', (e) => {
+            if (e.target.classList.contains('nav-tab')) {
+                const targetId = e.target.dataset.target;
+                updateContent(targetId);
+            }
+        });
+        
+        // Initial load
+        updateContent('#part1');
+    });
+
+    function checkQuiz(formId) {
+        const form = document.getElementById(formId);
+        const inputs = form.querySelectorAll('.quiz-input');
+        
+        inputs.forEach(input => {
+            input.classList.remove('correct', 'incorrect');
+            const userAnswer = input.value.trim().toLowerCase().replace(/[.?]/g, '');
+            const correctAnswer = input.dataset.answer.trim().toLowerCase().replace(/[.?]/g, '');
+            
+            if (userAnswer === correctAnswer) {
+                input.classList.add('correct');
+            } else {
+                input.classList.add('incorrect');
+            }
+        });
+    }
+</script>
 </body>
 </html>
+```
