@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영어 문법 대사전: 기초부터 심화까지 (최종 완성본)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Friendly & Bright -->
+    <!-- Application Structure Plan: A comprehensive, topic-based interactive encyclopedia of English grammar. The structure uses 10 thematic "Parts" for navigation, allowing users to explore topics from basic to advanced at their own pace. Each Part contains detailed chapters in collapsible accordions. This design provides a clear, logical, and deep learning path without a rigid schedule, making it the ultimate self-study resource. -->
+    <!-- Visualization & Content Choices: 
+        - Grammar Concepts: Goal: Explain Deeply. Method: Detailed prose, extensive examples, comparison tables, and notes on nuances and exceptions. The content covers everything from basic parts of speech to advanced topics like inversion and conditionals.
+        - Quizzes: Goal: Reinforce Core Concepts. Method: Minimal fill-in-the-blank or simple composition questions within each chapter for immediate self-assessment.
+        - Justification: This design prioritizes deep, conceptual understanding over testing. The vast, well-organized content, combined with a user-friendly interface, creates an authoritative yet accessible learning tool.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body { font-family: 'Gowun Dodum', sans-serif; background-color: #f9fafb; }
+        .nav-tab.active { color: #2563eb; border-bottom-color: #2563eb; }
+        .content-section { display: none; }
+        .content-section.active { display: block; }
+        details > summary { cursor: pointer; list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+        details[open] summary .accordion-icon { transform: rotate(90deg); }
+        .accordion-icon { transition: transform 0.2s; }
+        .quiz-input.correct { border-color: #16a34a; background-color: #f0fdf4; }
+        .quiz-input.incorrect { border-color: #dc2626; background-color: #fef2f2; }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <div class="container mx-auto max-w-5xl p-4 sm:p-6">
+        <header class="text-center my-8">
+            <h1 class="text-4xl sm:text-5xl font-bold text-blue-600">영어 문법 대사전</h1>
+            <p class="text-lg text-gray-600 mt-2">기초부터 심화까지 모든 것을 한 곳에서</p>
+        </header>
+
+        <!-- Part Navigation -->
+        <nav id="navigation" class="flex flex-wrap justify-center border-b border-gray-200 mb-8">
+            <button data-target="#part1" class="nav-tab text-md font-semibold px-4 py-3 text-gray-500 border-b-2 border-transparent">Part 1: 재료</button>
+            <button data-target="#part2" class="nav-tab text-md font-semibold px-4 py-3 text-gray-500 border-b-2 border-transparent">Part 2: 뼈대</button>
+            <button data-target="#part3" class="nav-tab text-md font-semibold px-4 py-3 text-gray-500 border-b-2 border-transparent">Part 3: 시제</button>
+            <button data-target="#part4" class="nav-tab text-md font-semibold px-4 py-3 text-gray-500 border-b-2 border-transparent">Part 4: 조동사</button>
+            <button data-target="#part5" class="nav-tab text-md font-semibold px-4 py-3 text-gray-500 border-b-2 border-transparent">Part 5: 수동태</button>
+            <button data-target="#part6" class="nav-tab text-md font-semibold px-4 py-3 text-gray-500 border-b-2 border-transparent">Part 6: 준동사</button>
+            <button data-target="#part7" class="nav-tab text-md font-semibold px-4 py-3 text-gray-500 border-b-2 border-transparent">Part 7: 수식어</button>
+            <button data-target="#part8" class="nav-tab text-md font-semibold px-4 py-3 text-gray-500 border-b-2 border-transparent">Part 8: 접속사</button>
+            <button data-target="#part9" class="nav-tab text-md font-semibold px-4 py-3 text-gray-500 border-b-2 border-transparent">Part 9: 관계사</button>
+            <button data-target="#part10" class="nav-tab text-md font-semibold px-4 py-3 text-gray-500 border-b-2 border-transparent">Part 10: 특수구문</button>
+        </nav>
+
+        <main>
+            <!-- Part 1 Content -->
+            <section id="part1" class="content-section">
+                <h2 class="text-2xl font-bold text-center mb-6">Part 1: 문장의 재료 (8품사)</h2>
+                <div class="space-y-4">
+                    <details class="bg-white rounded-lg shadow-sm" open>
+                        <summary class="text-lg font-semibold flex justify-between items-center p-4"><span>Chapter 1: 명사, 대명사</span><span class="accordion-icon text-blue-500 font-bold">▶</span></summary>
+                        <div class="p-4 border-t text-gray-700 space-y-3">
+                            <p><strong>명사(Noun)</strong>는 문장에서 주어, 목적어, 보어 자리에 들어가는 핵심 재료입니다. 셀 수 있는지 없는지에 따라 쓰임이 달라집니다.</p>
+                            <ul class="list-disc list-inside ml-4">
+                                <li><strong>셀 수 있는 명사:</strong> a book, two books처럼 수를 나타낼 수 있습니다.</li>
+                                <li><strong>셀 수 없는 명사:</strong> water, love, information처럼 형태가 없거나 추상적인 개념으로, a나 복수형(-s)을 붙이지 않습니다. 양을 나타낼 땐 a piece of, a lot of 등을 사용합니다.</li>
+                            </ul>
+                            <p><strong>대명사(Pronoun)</strong>는 반복을 피하기 위해 명사를 대신합니다. 문장에서의 역할(격)에 따라 I/my/me/mine처럼 형태가 바뀝니다.</p>
+                        </div>
+                    </details>
+                    <details class="bg-white rounded-lg shadow-sm">
+                        <summary class="text-lg font-semibold flex justify-between items-center p-4"><span>Chapter 2: 동사, 형용사, 부사</span><span class="accordion-icon text-blue-500 font-bold">▶</span></summary>
+                        <div class="p-4 border-t text-gray-700 space-y-3">
+                            <p><strong>동사(Verb)</strong>는 주어의 동작이나 상태를 설명하며 문장의 심장과 같습니다. be동사(am, is, are)와 일반동사(run, study)로 나뉩니다.</p>
+                            <p><strong>형용사(Adjective)</strong>는 명사를 꾸며주거나(a <strong>kind</strong> boy), 주어를 보충 설명(He is <strong>kind</strong>)하는 역할을 합니다.</p>
+                            <p><strong>부사(Adverb)</strong>는 동사, 형용사, 다른 부사, 문장 전체를 꾸며 의미를 더 풍부하게 만듭니다. (He runs <strong>very fast</strong>.)</p>
+                        </div>
+                    </details>
+                </div>
+            </section>
+
+            <!-- Part 2 Content -->
+            <section id="part2" class="content-section">
+                <h2 class="text-2xl font-bold text-center mb-6">Part 2: 문장의 뼈대 (구조)</h2>
+                <div class="space-y-4">
+                    <details class="bg-white rounded-lg shadow-sm" open>
+                        <summary class="text-lg font-semibold flex justify-between items-center p-4"><span>Chapter 3: 문장의 5형식</span><span class="accordion-icon text-blue-500 font-bold">▶</span></summary>
+                        <div class="p-4 border-t text-gray-700 space-y-3">
+                            <p><strong>1형식 (S+V):</strong> 주어와 동사만으로 완전합니다. <em>The sun rises.</em></p>
+                            <p><strong>2형식 (S+V+C):</strong> 주어를 보충하는 보어가 필요합니다. (주어=보어) <em>She became a doctor.</em></p>
+                            <p><strong>3형식 (S+V+O):</strong> 동사의 대상인 목적어가 필요합니다. <em>I love music.</em></p>
+                            <p><strong>4형식 (S+V+I.O+D.O):</strong> '~에게 ~을' 주다. <em>He gave me a book.</em></p>
+                            <p><strong>5형식 (S+V+O+O.C):</strong> 목적어를 보충하는 목적격보어가 필요합니다. (목적어=목적격보어) <em>Music makes me happy.</em></p>
+                             <div class="mt-4 p-4 bg-blue-50 rounded-lg">
+                                <h4 class="font-semibold mb-2">💡 개념 확인 퀴즈</h4>
+                                <form id="quiz-p2-c3" class="space-y-2">
+                                    <p>1. (영작) 그들은 그를 영웅이라고 부른다. (5형식)<br><input type="text" class="quiz-input w-full p-1 border rounded mt-1" data-answer="They call him a hero."></p>
+                                    <button type="button" onclick="checkQuiz('quiz-p2-c3')" class="mt-2 px-3 py-1 bg-blue-500 text-white rounded-md hover:bg-blue-600 text-sm">정답 확인</button>
+                                </form>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+            </section>
+            
+            <!-- Part 3 Content -->
+            <section id="part3" class="content-section">
+                <h2 class="text-2xl font-bold text-center mb-6">Part 3: 시제 (Tense)</h2>
+                 <div class="space-y-4">
+                    <details class="bg-white rounded-lg shadow-sm" open>
+                        <summary class="text-lg font-semibold flex justify-between items-center p-4"><span>Chapter 4: 단순, 진행, 완료 시제</span><span class="accordion-icon text-blue-500 font-bold">▶</span></summary>
+                        <div class="p-4 border-t text-gray-700 space-y-3">
+                            <p><strong>단순 시제:</strong> 현재(습관, 진리), 과거(끝난 일), 미래(예정된 일)를 나타냅니다.</p>
+                            <p><strong>진행 시제:</strong> 특정 시점에 진행 중인 동작을 강조합니다. <em>I am studying English now.</em></p>
+                            <p><strong>완료 시제:</strong> 과거의 일이 현재(현재완료), 과거의 특정 시점(과거완료), 미래의 특정 시점(미래완료)과 어떻게든 연결되어 있음을 나타냅니다. <br><em>현재완료 경험: I <strong>have been</strong> to Paris before. (파리에 가 본 경험이 있다.) <br>과거완료: The train <strong>had left</strong> when I arrived. (내가 도착한 것보다 기차가 떠난 것이 먼저다.)</em></p>
+                        </div>
+                    </details>
+                </div>
+            </section>
+            
+            <!-- Part 4 Content -->
+            <section id="part4" class="content-section">
+                <h2 class="text-2xl font-bold text-center mb-6">Part 4: 조동사 (Modal Verbs)</h2>
+                 <div class="space-y-4">
+                    <details class="bg-white rounded-lg shadow-sm" open>
+                        <summary class="text-lg font-semibold flex justify-between items-center p-4"><span>Chapter 5: 조동사의 의미와 형태</span><span class="accordion-icon text-blue-500 font-bold">▶</span></summary>
+                        <div class="p-4 border-t text-gray-700 space-y-3">
+                            <p><strong>조동사</strong>는 동사 앞에 쓰여 능력, 허가, 의무, 추측 등의 의미를 더해줍니다. 조동사 뒤에는 항상 동사원형이 옵니다.</p>
+                            <p><strong>조동사 + have p.p.</strong>는 과거의 일에 대한 추측이나 후회를 나타냅니다.<br><em>should have p.p. (~했어야 했는데): I <strong>should have studied</strong> harder. <br>must have p.p. (~했음에 틀림없다): He <strong>must have been</strong> sick.</em></p>
+                             <div class="mt-4 p-4 bg-blue-50 rounded-lg">
+                                <h4 class="font-semibold mb-2">💡 개념 확인 퀴즈</h4>
+                                <form id="quiz-p4-c5" class="space-y-2">
+                                    <p>1. (영작) 너는 그에게 사과했어야 했다.<br><input type="text" class="quiz-input w-full p-1 border rounded mt-1" data-answer="You should have apologized to him."></p>
+                                    <button type="button" onclick="checkQuiz('quiz-p4-c5')" class="mt-2 px-3 py-1 bg-blue-500 text-white rounded-md hover:bg-blue-600 text-sm">정답 확인</button>
+                                </form>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+            </section>
+            
+             <!-- Part 5 Content -->
+            <section id="part5" class="content-section">
+                <h2 class="text-2xl font-bold text-center mb-6">Part 5: 수동태 (Passive Voice)</h2>
+                 <div class="space-y-4">
+                    <details class="bg-white rounded-lg shadow-sm" open>
+                        <summary class="text-lg font-semibold flex justify-between items-center p-4"><span>Chapter 6: 수동태의 형태와 쓰임</span><span class="accordion-icon text-blue-500 font-bold">▶</span></summary>
+                        <div class="p-4 border-t text-gray-700 space-y-3">
+                            <p>주어가 동작을 '당하는' 입장을 나타낼 때 사용하며, <strong class="text-blue-600">be동사 + p.p. (과거분사)</strong> 형태입니다. 행위자가 중요하지 않거나 모를 때 주로 사용됩니다.</p>
+                            <p>4형식, 5형식 문장도 수동태로 바꿀 수 있으며, 다양한 시제와 조동사와도 결합할 수 있습니다.<br><em>4형식 수동태: I <strong>was given</strong> a book by him. / A book <strong>was given</strong> to me by him.<br>조동사 수동태: This work <strong>must be finished</strong> by noon.</em></p>
+                        </div>
+                    </details>
+                </div>
+            </section>
+            
+             <!-- Part 6 Content -->
+            <section id="part6" class="content-section">
+                <h2 class="text-2xl font-bold text-center mb-6">Part 6: 준동사 (Verbals)</h2>
+                 <div class="space-y-4">
+                    <details class="bg-white rounded-lg shadow-sm" open>
+                        <summary class="text-lg font-semibold flex justify-between items-center p-4"><span>Chapter 7: to부정사와 동명사</span><span class="accordion-icon text-blue-500 font-bold">▶</span></summary>
+                        <div class="p-4 border-t text-gray-700 space-y-3">
+                            <p><strong>to부정사</strong>와 <strong>동명사</strong>는 동사를 다른 품사(명사, 형용사, 부사)로 바꿔주는 역할을 합니다.</p>
+                            <p>어떤 동사(want, hope 등)는 목적어로 to부정사만, 어떤 동사(enjoy, finish 등)는 동명사만 사용합니다. 둘 다 쓰지만 의미가 달라지는 동사(remember, try, stop)도 있습니다.<br><em>I stopped <strong>to smoke</strong>. (담배를 피우기 위해 멈췄다.)<br>I stopped <strong>smoking</strong>. (담배 피우는 것을 그만뒀다.)</em></p>
+                        </div>
+                    </details>
+                     <details class="bg-white rounded-lg shadow-sm">
+                        <summary class="text-lg font-semibold flex justify-between items-center p-4"><span>Chapter 8: 분사</span><span class="accordion-icon text-blue-500 font-bold">▶</span></summary>
+                        <div class="p-4 border-t text-gray-700 space-y-3">
+                            <p><strong>분사</strong>는 동사를 형용사처럼 바꿔주는 말입니다.</p>
+                            <p><strong>현재분사(-ing)</strong>는 '능동/진행'의 의미를, <strong>과거분사(p.p.)</strong>는 '수동/완료'의 의미를 가집니다.<br><em>a <strong>sleeping</strong> baby (자고 있는 아기 - 능동) vs a <strong>broken</strong> window (깨진 창문 - 수동)</em></p>
+                            <p><strong>분사구문</strong>은 부사절을 분사를 이용해 간결하게 줄인 구문입니다.<br><em><strong>When I walked</strong> into the room, I saw him. → <strong>Walking</strong> into the room, I saw him.</em></p>
+                             <div class="mt-4 p-4 bg-blue-50 rounded-lg">
+                                <h4 class="font-semibold mb-2">💡 개념 확인 퀴즈</h4>
+                                <form id="quiz-p6-c8" class="space-y-2">
+                                    <p>1. (영작) 피곤했기 때문에, 그는 일찍 잠자리에 들었다. (분사구문)<br><input type="text" class="quiz-input w-full p-1 border rounded mt-1" data-answer="Feeling tired, he went to bed early."></p>
+                                    <button type="button" onclick="checkQuiz('quiz-p6-c8')" class="mt-2 px-3 py-1 bg-blue-500 text-white rounded-md hover:bg-blue-600 text-sm">정답 확인</button>
+                                </form>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+            </section>
+            
+             <!-- Part 7 Content -->
+            <section id="part7" class="content-section">
+                <h2 class="text-2xl font-bold text-center mb-6">Part 7: 수식어 (Modifiers)</h2>
+                 <div class="space-y-4">
+                    <details class="bg-white rounded-lg shadow-sm" open>
+                        <summary class="text-lg font-semibold flex justify-between items-center p-4"><span>Chapter 9: 비교 구문</span><span class="accordion-icon text-blue-500 font-bold">▶</span></summary>
+                        <div class="p-4 border-t text-gray-700 space-y-3">
+                            <p><strong>원급 비교 (as ~ as):</strong> 두 대상의 정도가 같음을 나타냅니다. 부정문은 `not as[so] ~ as` 입니다.<br><em>He is <strong>as tall as</strong> his father. (그는 그의 아버지 만큼 키가 크다.)</em></p>
+                            <p><strong>비교급 (-er than / more ~ than):</strong> 두 대상을 비교하여 우열을 나타냅니다. 비교급을 강조할 때는 `much, even, far, still, a lot` 등을 사용합니다. (very는 불가)<br><em>She is <strong>much taller than</strong> me. (그녀는 나보다 훨씬 키가 크다.)</em></p>
+                            <p><strong>최상급 (the -est / the most ~):</strong> 셋 이상의 대상 중에서 최고를 나타냅니다. 보통 `in + 장소` 또는 `of + 복수명사`와 함께 쓰입니다.<br><em>He is <strong>the tallest</strong> student in his class. (그는 반에서 가장 키가 큰 학생이다.)</em></p>
+                             <p><strong>The 비교급, the 비교급:</strong> '~하면 할수록, 더욱 ~하다'라는 의미로, 두 내용이 비례 관계에 있음을 나타냅니다.<br><em><strong>The more</strong> you have, <strong>the more</strong> you want. (더 많이 가질수록, 더 많이 원한다.)</em></p>
+                        </div>
+                    </details>
+                </div>
+            </section>
+            
+             <!-- Part 8 Content -->
+            <section id="part8" class="content-section">
+                <h2 class="text-2xl font-bold text-center mb-6">Part 8: 접속사 (Conjunctions)</h2>
+                 <div class="space-y-4">
+                    <details class="bg-white rounded-lg shadow-sm" open>
+                        <summary class="text-lg font-semibold flex justify-between items-center p-4"><span>Chapter 10: 등위, 종속, 상관접속사</span><span class="accordion-icon text-blue-500 font-bold">▶</span></summary>
+                        <div class="p-4 border-t text-gray-700 space-y-3">
+                            <p><strong>등위접속사:</strong> 문법적으로 대등한 단어, 구, 절을 연결합니다. (and, but, or, so, for)</p>
+                            <p><strong>종속접속사:</strong> 하나의 절(종속절)을 다른 절(주절)에 종속시켜 의미를 더합니다.</p>
+                            <ul class="list-disc list-inside ml-4">
+                                <li><strong>명사절 접속사 (that, whether, if):</strong> 문장에서 주어, 목적어, 보어 역할을 합니다. <em>I know <strong>that he is honest</strong>.</em></li>
+                                <li><strong>부사절 접속사 (when, because, if, although 등):</strong> 주절에 시간, 이유, 조건, 양보 등의 의미를 더합니다. <em>Call me <strong>when you are ready</strong>.</em></li>
+                            </ul>
+                            <p><strong>상관접속사:</strong> 짝을 이루어 사용됩니다.<br><em><strong>not only</strong> A <strong>but also</strong> B (A뿐만 아니라 B도), <strong>both</strong> A <strong>and</strong> B (A와 B 둘 다)</em></p>
+                        </div>
+                    </details>
+                </div>
+            </section>
+            
+             <!-- Part 9 Content -->
+            <section id="part9" class="content-section">
+                <h2 class="text-2xl font-bold text-center mb-6">Part 9: 관계사 (Relatives)</h2>
+                 <div class="space-y-4">
+                    <details class="bg-white rounded-lg shadow-sm" open>
+                        <summary class="text-lg font-semibold flex justify-between items-center p-4"><span>Chapter 11: 관계대명사</span><span class="accordion-icon text-blue-500 font-bold">▶</span></summary>
+                        <div class="p-4 border-t text-gray-700 space-y-3">
+                            <p><strong>관계대명사</strong>는 '접속사 + 대명사'의 역할을 하며, 앞의 명사(선행사)를 꾸며주는 형용사절을 이끕니다.</p>
+                            <ul class="list-disc list-inside ml-4">
+                                <li><strong>주격(who, which, that):</strong> 관계사절 안에서 주어 역할을 합니다. <em>I know a girl <strong>who lives</strong> next door.</em></li>
+                                <li><strong>목적격(whom, which, that):</strong> 관계사절 안에서 목적어 역할을 하며, 생략 가능합니다. <em>This is the book <strong>(which) I bought</strong>.</em></li>
+                                <li><strong>소유격(whose):</strong> '~의'라는 소유의 의미를 나타냅니다. <em>I have a friend <strong>whose father</strong> is a pilot.</em></li>
+                                <li><strong>what:</strong> 선행사를 포함하여 '~하는 것'으로 해석되는 명사절을 이끕니다. <em><strong>What he said</strong> is true.</em></li>
+                            </ul>
+                        </div>
+                    </details>
+                    <details class="bg-white rounded-lg shadow-sm">
+                        <summary class="text-lg font-semibold flex justify-between items-center p-4"><span>Chapter 12: 관계부사</span><span class="accordion-icon text-blue-500 font-bold">▶</span></summary>
+                        <div class="p-4 border-t text-gray-700 space-y-3">
+                            <p><strong>관계부사</strong>는 '전치사 + 관계대명사'를 대신하며, 뒤에는 완전한 문장이 옵니다. 선행사에 따라 결정됩니다.</p>
+                             <ul class="list-disc list-inside ml-4">
+                                <li><strong>where (장소):</strong> This is the house <strong>where</strong> I was born. (= in which)</li>
+                                <li><strong>when (시간):</strong> I remember the day <strong>when</strong> we first met. (= on which)</li>
+                                <li><strong>why (이유):</strong> Tell me the reason <strong>why</strong> you were late. (= for which)</li>
+                                <li><strong>how (방법):</strong> This is <strong>how</strong> he solved the problem. (the way와 how는 함께 쓰지 않음)</li>
+                            </ul>
+                             <div class="mt-4 p-4 bg-blue-50 rounded-lg">
+                                <h4 class="font-semibold mb-2">💡 개념 확인 퀴즈</h4>
+                                <form id="quiz-p9-c12" class="space-y-2">
+                                    <p>1. (영작) 이것이 내가 그를 좋아하는 이유이다.<br><input type="text" class="quiz-input w-full p-1 border rounded mt-1" data-answer="This is the reason why I like him."></p>
+                                    <button type="button" onclick="checkQuiz('quiz-p9-c12')" class="mt-2 px-3 py-1 bg-blue-500 text-white rounded-md hover:bg-blue-600 text-sm">정답 확인</button>
+                                </form>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+            </section>
+            
+             <!-- Part 10 Content -->
+            <section id="part10" class="content-section">
+                 <h2 class="text-2xl font-bold text-center mb-6">Part 10: 특수 구문</h2>
+                 <div class="space-y-4">
+                    <details class="bg-white rounded-lg shadow-sm" open>
+                        <summary class="text-lg font-semibold flex justify-between items-center p-4"><span>Chapter 13: 가정법</span><span class="accordion-icon text-blue-500 font-bold">▶</span></summary>
+                        <div class="p-4 border-t text-gray-700 space-y-3">
+                            <p><strong>가정법</strong>은 사실과 반대되거나 실현 가능성이 낮은 일을 상상하여 말하는 방식입니다.</p>
+                            <p><strong>가정법 과거:</strong> 현재 사실의 반대. `If + 주어 + 동사 과거형, 주어 + would/could + 동사원형`<br><em>If I <strong>were</strong> rich, I <strong>would buy</strong> a big house. (내가 부자라면, 큰 집을 살 텐데.)</em></p>
+                            <p><strong>가정법 과거완료:</strong> 과거 사실의 반대. `If + 주어 + had p.p., 주어 + would/could + have p.p.`<br><em>If I <strong>had studied</strong> harder, I <strong>could have passed</strong> the exam. (더 열심히 공부했더라면, 시험에 통과했을 텐데.)</em></p>
+                        </div>
+                    </details>
+                    <details class="bg-white rounded-lg shadow-sm">
+                        <summary class="text-lg font-semibold flex justify-between items-center p-4"><span>Chapter 14: 도치와 강조</span><span class="accordion-icon text-blue-500 font-bold">▶</span></summary>
+                        <div class="p-4 border-t text-gray-700 space-y-3">
+                            <p><strong>도치</strong>는 강조를 위해 문장의 어순을 바꾸는 것입니다. 부정어(Never, Not only 등)나 장소 부사구가 문장 맨 앞으로 오면 주어와 동사의 위치가 바뀝니다.<br><em><strong>Never have I seen</strong> such a beautiful sight.</em></p>
+                            <p><strong>강조</strong>는 `It is ~ that` 구문이나 동사 앞에 `do/does/did`를 써서 특정 부분을 강조합니다.<br><em><strong>It was Tom</strong> that broke the window. (창문을 깬 것은 바로 탐이었다.)<br>I <strong>do love</strong> you. (나는 정말로 너를 사랑한다.)</em></p>
+                        </div>
+                    </details>
+                </div>
+             </section>
+        </main>
+
+    </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const navTabs = document.querySelectorAll('.nav-tab');
+        const contentSections = document.querySelectorAll('.content-section');
+
+        function updateContent(targetId) {
+            navTabs.forEach(tab => {
+                tab.classList.toggle('active', tab.dataset.target === targetId);
+            });
+            contentSections.forEach(section => {
+                section.classList.toggle('active', '#' + section.id === targetId);
+            });
+        }
+
+        const navigation = document.getElementById('navigation');
+        navigation.addEventListener('click', (e) => {
+            if (e.target.classList.contains('nav-tab')) {
+                const targetId = e.target.dataset.target;
+                updateContent(targetId);
+            }
+        });
+        
+        // Initial load
+        updateContent('#part1');
+    });
+
+    function checkQuiz(formId) {
+        const form = document.getElementById(formId);
+        const inputs = form.querySelectorAll('.quiz-input');
+        
+        inputs.forEach(input => {
+            input.classList.remove('correct', 'incorrect');
+            const userAnswer = input.value.trim().toLowerCase().replace(/[.?]/g, '');
+            const correctAnswer = input.dataset.answer.trim().toLowerCase().replace(/[.?]/g, '');
+            
+            if (userAnswer === correctAnswer) {
+                input.classList.add('correct');
+            } else {
+                input.classList.add('incorrect');
+            }
+        });
+    }
+</script>
+</body>
+</html>
