@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영어 문법 대사전: 전 파트 심화 연습 (완성본)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Gowun Dodum', sans-serif; background-color: #f9fafb; }
+        .nav-tab.active { color: #2563eb; border-bottom-color: #2563eb; }
+        .content-section { display: none; }
+        .content-section.active { display: block; }
+        .quiz-section h3 {
+            color: #1d4ed8;
+            border-bottom: 2px solid #dbeafe;
+            padding-bottom: 8px;
+            margin-bottom: 16px;
+        }
+        .quiz-input.correct { border-color: #16a34a; background-color: #f0fdf4; }
+        .quiz-input.incorrect { border-color: #dc2626; background-color: #fef2f2; }
+        .feedback-icon {
+            font-weight: bold;
+            margin-left: 8px;
+        }
+        .feedback-icon.correct { color: #16a34a; }
+        .feedback-icon.incorrect { color: #dc2626; }
+        .correct-answer { color: #6b7280; font-size: 0.875rem; margin-left: 8px; }
+        .practice-description {
+            background-color: #eef2ff;
+            color: #4338ca;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <div class="container mx-auto max-w-4xl p-4 sm:p-6">
+        <header class="text-center my-8">
+            <h1 class="text-4xl sm:text-5xl font-bold text-blue-600">전 파트 심화 연습</h1>
+            <p class="text-lg text-gray-600 mt-2">영어 문법 대사전 워크북</p>
+        </header>
+
+        <!-- Part Navigation -->
+        <nav id="navigation" class="flex flex-wrap justify-center border-b border-gray-200 mb-8">
+            <button data-target="#part1" class="nav-tab text-md font-semibold px-3 py-3 text-gray-500 border-b-2 border-transparent">Part 1</button>
+            <button data-target="#part2" class="nav-tab text-md font-semibold px-3 py-3 text-gray-500 border-b-2 border-transparent">Part 2</button>
+            <button data-target="#part3" class="nav-tab text-md font-semibold px-3 py-3 text-gray-500 border-b-2 border-transparent">Part 3</button>
+            <button data-target="#part4" class="nav-tab text-md font-semibold px-3 py-3 text-gray-500 border-b-2 border-transparent">Part 4</button>
+            <button data-target="#part5" class="nav-tab text-md font-semibold px-3 py-3 text-gray-500 border-b-2 border-transparent">Part 5</button>
+            <button data-target="#part6" class="nav-tab text-md font-semibold px-3 py-3 text-gray-500 border-b-2 border-transparent">Part 6</button>
+            <button data-target="#part7" class="nav-tab text-md font-semibold px-3 py-3 text-gray-500 border-b-2 border-transparent">Part 7</button>
+            <button data-target="#part8" class="nav-tab text-md font-semibold px-3 py-3 text-gray-500 border-b-2 border-transparent">Part 8</button>
+            <button data-target="#part9" class="nav-tab text-md font-semibold px-3 py-3 text-gray-500 border-b-2 border-transparent">Part 9</button>
+            <button data-target="#part10" class="nav-tab text-md font-semibold px-3 py-3 text-gray-500 border-b-2 border-transparent">Part 10</button>
+        </nav>
+
+        <main id="main-content">
+            <!-- Practice sections will be dynamically inserted here -->
+        </main>
+    </div>
+
+<script>
+    const practiceContent = {
+        part1: {
+            title: "Part 1: 문장의 재료 (8품사)",
+            description: "명사의 수, 대명사의 격, 형용사와 부사의 쓰임을 정확히 구분하는 능력을 연습합니다.",
+            unscramble: [
+                { q: "information / gave / some / me / he / useful", a: "He gave me some useful information." },
+                { q: "of / my / friends / is / one / she", a: "She is one of my friends." },
+                { q: "very / the / slowly / old / walks / man", a: "The old man walks very slowly." },
+                { q: "beautiful / she / a / has / voice", a: "She has a beautiful voice." },
+                { q: "a / of / two / bought / I / furniture / pieces", a: "I bought two pieces of furniture." },
+                { q: "is / surprisingly / the / easy / test", a: "The test is surprisingly easy." },
+                { q: "children / are / those / playing / park / in / the", a: "Those children are playing in the park." },
+                { q: "happy / look / you / today / very", a: "You look very happy today." },
+                { q: "the / carefully / driver / drives / bus / the", a: "The bus driver drives carefully." },
+                { q: "water / in / there / the / is / bottle / much / ?", a: "Is there much water in the bottle?" }
+            ],
+            tokorean: [
+                { q: "This is not my umbrella; mine is the black one.", a: "이것은 내 우산이 아니야; 내 것은 검은색이야." },
+                { q: "She introduced herself to the new students.", a: "그녀는 신입생들에게 자기소개를 했다." },
+                { q: "I need a glass of milk and two slices of cheese.", a: "나는 우유 한 잔과 치즈 두 조각이 필요하다." },
+                { q: "The new restaurant became famous quickly.", a: "그 새로운 식당은 빠르게 유명해졌다." },
+                { q: "He is an honest and hardworking student.", a: "그는 정직하고 성실한 학생이다." },
+                { q: "This flower smells so sweet.", a: "이 꽃은 매우 달콤한 냄새가 난다." },
+                { q: "Luckily, no one was hurt in the accident.", a: "운 좋게도, 그 사고에서 아무도 다치지 않았다." },
+                { q: "She always speaks politely to everyone.", a: "그녀는 항상 모든 사람에게 공손하게 말한다." },
+                { q: "There are many sheep on the hill.", a: "언덕 위에는 많은 양들이 있다." },
+                { q: "What he needs is not money, but love.", a: "그에게 필요한 것은 돈이 아니라 사랑이다." }
+            ],
+            toenglish: [
+                { q: "그 숙녀들의 모자는 매우 비싸다.", a: "The ladies' hats are very expensive." },
+                { q: "저것은 내 것이고, 이것은 네 것이다.", a: "That is mine, and this is yours." },
+                { q: "나는 약간의 조언이 필요하다.", a: "I need some advice." },
+                { q: "모든 정보가 유용했던 것은 아니다.", a: "Not all the information was useful." },
+                { q: "너는 너 자신을 돌봐야 한다.", a: "You should take care of yourself." },
+                { q: "그 수프는 짠 맛이 난다.", a: "The soup tastes salty." },
+                { q: "그는 영어를 유창하게 말한다.", a: "He speaks English fluently." },
+                { q: "그 문제는 풀기에 어려웠다.", a: "The problem was difficult to solve." },
+                { q: "나는 완전히 너의 의견에 동의한다.", a: "I completely agree with your opinion." },
+                { q: "그녀의 목소리는 부드럽게 들린다.", a: "Her voice sounds soft." }
+            ]
+        },
+        part2: {
+            title: "Part 2: 문장의 뼈대 (구조)",
+            description: "문장의 5형식을 구별하고, 각 형식에 맞는 동사와 문장 성분을 배열하는 능력을 연습합니다.",
+            unscramble: [
+                { q: "her / a / parents / her / new / bought / bike", a: "Her parents bought her a new bike." },
+                { q: "the / president / people / him / elected / the", a: "The people elected him the president." },
+                { q: "a / teacher / my / me / question / asked", a: "My teacher asked me a question." },
+                { q: "us / the / story / made / sad", a: "The story made us sad." },
+                { q: "showed / he / his / me / album", a: "He showed me his album." },
+                { q: "warm / the / keeps / fire / us", a: "The fire keeps us warm." },
+                { q: "found / I / easy / the / book", a: "I found the book easy." },
+                { q: "a / my / is / doctor / father", a: "My father is a doctor." },
+                { q: "the / on / cat / sleeps / the / sofa", a: "The cat sleeps on the sofa." },
+                { q: "sent / a / she / letter / him", a: "She sent him a letter." }
+            ],
+            tokorean: [
+                { q: "My mother made me a delicious sandwich.", a: "우리 엄마는 나에게 맛있는 샌드위치를 만들어 주셨다." },
+                { q: "We consider him a great leader.", a: "우리는 그를 위대한 지도자라고 여긴다." },
+                { q: "This music sounds wonderful.", a: "이 음악은 멋지게 들린다." },
+                { q: "Can you pass me the salt, please?", a: "소금 좀 건네주시겠어요?" },
+                { q: "She painted the wall white.", a: "그녀는 그 벽을 흰색으로 칠했다." },
+                { q: "The leaves turn red in autumn.", a: "가을에는 나뭇잎들이 빨갛게 변한다." },
+                { q: "He teaches us English.", a: "그는 우리에게 영어를 가르친다." },
+                { q: "I left the door open.", a: "나는 문을 열어둔 채로 두었다." },
+                { q: "The baby is sleeping in his bed.", a: "아기는 그의 침대에서 자고 있다." },
+                { q: "They named their daughter Olivia.", a: "그들은 그들의 딸을 올리비아라고 이름 지었다." }
+            ],
+            toenglish: [
+                { q: "그는 나에게 그의 비밀을 말했다.", a: "He told me his secret." },
+                { q: "그 소식은 나를 행복하게 만들었다.", a: "The news made me happy." },
+                { q: "그녀는 유명한 배우가 되었다.", a: "She became a famous actress." },
+                { q: "나는 그에게 선물을 사주었다.", a: "I bought him a present." },
+                { q: "그의 농담은 모두를 웃게 했다.", a: "His joke made everyone laugh." },
+                { q: "그녀는 똑똑해 보인다.", a: "She looks smart." },
+                { q: "나는 내 방을 깨끗하게 유지한다.", a: "I keep my room clean." },
+                { q: "새들이 하늘을 난다.", a: "Birds fly in the sky." },
+                { q: "그는 나에게 수학을 가르쳐 줄 수 있다.", a: "He can teach me math." },
+                { q: "우리는 그를 팀의 주장으로 뽑았다.", a: "We chose him captain of the team." }
+            ]
+        },
+        part3: {
+            title: "Part 3: 시제 (Tense)",
+            description: "단순, 진행, 완료 시제를 문맥에 맞게 사용하고, 특히 현재완료와 과거완료의 차이를 이해하는 능력을 연습합니다.",
+            unscramble: [
+                { q: "for / have / here / I / lived / years / five", a: "I have lived here for five years." },
+                { q: "he / when / arrived / I / already / had / left", a: "He had already left when I arrived." },
+                { q: "studying / am / I / for / the / now / test", a: "I am studying for the test now." },
+                { q: "will / she / a / famous / be / someday / singer", a: "She will be a famous singer someday." },
+                { q: "watching / was / he / TV / I / called / when", a: "He was watching TV when I called." },
+                { q: "never / I / have / before / such / seen / a thing", a: "I have never seen such a thing before." },
+                { q: "by / time / that / have / finished / will / I / it", a: "I will have finished it by that time." },
+                { q: "raining / it / since / has / been / morning / this", a: "It has been raining since this morning." },
+                { q: "lost / he / that / had / the / found / watch / he", a: "He found the watch that he had lost." },
+                { q: "every / to / goes / he / day / the / library", a: "He goes to the library every day." }
+            ],
+            tokorean: [
+                { q: "I have just finished my homework.", a: "나는 방금 내 숙제를 끝냈다." },
+                { q: "She had never seen snow before she came to Canada.", a: "그녀는 캐나다에 오기 전까지 눈을 본 적이 없었다." },
+                { q: "We will be flying to Paris this time tomorrow.", a: "우리는 내일 이맘때 파리로 날아가고 있을 것이다." },
+                { q: "My father was washing his car.", a: "나의 아버지는 그의 차를 세차하고 계셨다." },
+                { q: "He has gone to America.", a: "그는 미국으로 가버렸다. (그래서 여기 없다)" },
+                { q: "The earth goes around the sun.", a: "지구는 태양 주위를 돈다." },
+                { q: "By the end of this year, she will have visited 10 countries.", a: "올해 말까지, 그녀는 10개국을 방문하게 될 것이다." },
+                { q: "I have been learning piano for 3 years.", a: "나는 3년 동안 피아노를 배우고 있다." },
+                { q: "The game had already begun before we got there.", a: "우리가 그곳에 도착하기 전에 경기는 이미 시작되었다." },
+                { q: "I will call you when I get home.", a: "내가 집에 도착하면 너에게 전화할게." }
+            ],
+            toenglish: [
+                { q: "나는 그 영화를 세 번 봤다.", a: "I have seen the movie three times." },
+                { q: "그가 역에 도착했을 때, 기차는 이미 떠났다.", a: "When he arrived at the station, the train had already left." },
+                { q: "그녀는 지금 피아노를 치고 있다.", a: "She is playing the piano now." },
+                { q: "나는 내년에 고등학생이 될 것이다.", a: "I will be a high school student next year." },
+                { q: "나는 지갑을 잃어버렸다. (그래서 지금 없다)", a: "I have lost my wallet." },
+                { q: "그는 2010년부터 서울에 살고 있다.", a: "He has lived in Seoul since 2010." },
+                { q: "나는 그가 오기 전에 숙제를 끝냈다.", a: "I had finished my homework before he came." },
+                { q: "물은 100도에서 끓는다.", a: "Water boils at 100 degrees Celsius." },
+                { q: "내일 이맘때, 우리는 해변에 누워있을 것이다.", a: "This time tomorrow, we will be lying on the beach." },
+                { q: "그녀는 10년 동안 교사로 일해오고 있다.", a: "She has been working as a teacher for 10 years." }
+            ]
+        },
+        part4: {
+            title: "Part 4: 조동사 (Modal Verbs)",
+            description: "기본 조동사의 의미를 구분하고, 특히 과거 사실에 대한 추측이나 후회를 나타내는 '조동사 + have p.p.' 형태를 연습합니다.",
+            unscramble: [
+                { q: "should / you / have / harder / studied", a: "You should have studied harder." },
+                { q: "must / he / tired / be / very", a: "He must be very tired." },
+                { q: "may / I / your / use / phone / ?", a: "May I use your phone?" },
+                { q: "cannot / she / have / the / done / thing / such", a: "She cannot have done such a thing." },
+                { q: "had / you / see / better / a / doctor", a: "You had better see a doctor." },
+                { q: "may / it / tomorrow / rain / have", a: "It may have rained tomorrow." },
+                { q: "used / to / he / live / here", a: "He used to live here." },
+                { q: "must / you / your / finish / homework", a: "You must finish your homework." },
+                { q: "have / he / may / forgotten / the / meeting", a: "He may have forgotten the meeting." },
+                { q: "would / I / stay / than / go / out / rather / home", a: "I would rather stay home than go out." }
+            ],
+            tokorean: [
+                { q: "He must have been handsome when he was young.", a: "그는 젊었을 때 잘생겼음에 틀림없다." },
+                { q: "You should not have said that to her.", a: "너는 그녀에게 그렇게 말하지 말았어야 했다." },
+                { q: "She might know the answer.", a: "그녀는 답을 알고 있을지도 모른다." },
+                { q: "I used to play the guitar, but I don't anymore.", a: "나는 기타를 치곤 했지만, 더 이상은 안 친다." },
+                { q: "He cannot have passed the exam; he didn't study at all.", a: "그는 시험에 통과했을 리가 없다; 그는 전혀 공부하지 않았다." },
+                { q: "You had better not be late again.", a: "너는 다시는 늦지 않는 것이 좋겠다." },
+                { q: "She may have left the key on the table.", a: "그녀는 열쇠를 테이블 위에 두고 갔을지도 모른다." },
+                { q: "We ought to respect our elders.", a: "우리는 어르신들을 존경해야 한다." },
+                { q: "I can't believe it. It must be a joke.", a: "믿을 수가 없어. 그건 농담임에 틀림없어." },
+                { q: "I would rather drink coffee than tea.", a: "나는 차보다 커피를 마시는 게 낫겠다." }
+            ],
+            toenglish: [
+                { q: "나는 더 일찍 일어났어야 했다.", a: "I should have gotten up earlier." },
+                { q: "그는 그 소문을 들었을지도 모른다.", a: "He may have heard the rumor." },
+                { q: "너는 안전벨트를 매야 한다.", a: "You must wear a seatbelt." },
+                { q: "그녀는 그를 만났을 리가 없다.", a: "She cannot have met him." },
+                { q: "우리는 지금 출발하는 것이 좋겠다.", a: "We had better start now." },
+                { q: "그는 부자였음에 틀림없다.", a: "He must have been rich." },
+                { q: "나는 수영을 할 수 있다.", a: "I can swim." },
+                { q: "그녀는 예전에 이 도시에 살았었다.", a: "She used to live in this city." },
+                { q: "내가 너의 펜을 써도 될까?", a: "May I use your pen?" },
+                { q: "너는 그의 조언을 따르는 것이 좋겠다.", a: "You should follow his advice." }
+            ]
+        },
+        part5: {
+            title: "Part 5: 수동태 (Passive Voice)",
+            description: "능동태 문장을 수동태로 전환하고, 특히 4, 5형식과 조동사가 포함된 문장의 수동태를 만드는 것을 연습합니다.",
+            unscramble: [
+                { q: "was / this / built / house / my / grandfather / by", a: "This house was built by my grandfather." },
+                { q: "the / will / meeting / be / held / tomorrow", a: "The meeting will be held tomorrow." },
+                { q: "was / a / I / doll / given / by / him", a: "I was given a doll by him." },
+                { q: "English / is / all / spoken / over / the / world", a: "English is spoken all over the world." },
+                { q: "the / was / room / cleaned / by / her", a: "The room was cleaned by her." },
+                { q: "to / was / he / seen / enter / the / building", a: "He was seen to enter the building." },
+                { q: "must / the / be / problem / solved / now", a: "The problem must be solved now." },
+                { q: "is / cheese / made / from / milk", a: "Cheese is made from milk." },
+                { q: "was / the / window / broken / somebody / by", a: "The window was broken by somebody." },
+                { q: "a / letter / sent / was / to / me / her / by", a: "A letter was sent to me by her." }
+            ],
+            tokorean: [
+                { q: "This song is loved by many people.", a: "이 노래는 많은 사람들에게 사랑받는다." },
+                { q: "He was called a genius by his friends.", a: "그는 그의 친구들에게 천재라고 불렸다." },
+                { q: "The report should be submitted by Friday.", a: "그 보고서는 금요일까지 제출되어야 한다." },
+                { q: "A new library is being built in our town.", a: "새로운 도서관이 우리 마을에 지어지고 있다." },
+                { q: "I was told an interesting story.", a: "나는 재미있는 이야기를 들었다." },
+                { q: "The car is being repaired by a mechanic.", a: "그 차는 정비공에 의해 수리되고 있다." },
+                { q: "The thief was caught by the police.", a: "그 도둑은 경찰에게 잡혔다." },
+                { q: "She was made to clean the room.", a: "그녀는 그 방을 청소하도록 시킴을 당했다." },
+                { q: "This book was written in 1990.", a: "이 책은 1990년에 쓰였다." },
+                { q: "He is known to everyone.", a: "그는 모든 사람에게 알려져 있다." }
+            ],
+            toenglish: [
+                { q: "이 컴퓨터는 독일에 의해 만들어졌다.", a: "This computer was made in Germany." },
+                { q: "그에게 선물이 주어졌다.", a: "A present was given to him." },
+                { q: "그 문은 페인트칠해져야 한다.", a: "The door should be painted." },
+                { q: "그녀는 파티에 초대받았다.", a: "She was invited to the party." },
+                { q: "그 문제는 쉽게 풀렸다.", a: "The problem was solved easily." },
+                { q: "그녀는 정직한 사람으로 알려져 있다.", a: "She is known as an honest person." },
+                { q: "나는 그 소식에 놀랐다.", a: "I was surprised at the news." },
+                { q: "그 다리는 작년에 건설되었다.", a: "The bridge was built last year." },
+                { q: "그 방은 학생들에 의해 사용되고 있다.", a: "The room is being used by the students." },
+                { q: "그는 그의 아들에 의해 자랑스러워졌다.", a: "He was proud of his son." }
+            ]
+        },
+        part6: {
+            title: "Part 6: 준동사 (Verbals)",
+            description: "to부정사와 동명사의 쓰임을 구분하고, 능동/수동 의미에 맞는 분사를 사용하며, 분사구문을 만드는 것을 연습합니다.",
+            unscramble: [
+                { q: "to / is / my / hobby / movies / watch", a: "My hobby is to watch movies." },
+                { q: "stopped / he / to / something / drink", a: "He stopped to drink something." },
+                { q: "is / a / there / sleeping / the / on / baby / bed", a: "There is a sleeping baby on the bed." },
+                { q: "tired / feeling / I / early / to / went / bed", a: "Feeling tired, I went to bed early." },
+                { q: "wants / she / a / to / be / doctor", a: "She wants to be a doctor." },
+                { q: "enjoys / he / listening / to / music", a: "He enjoys listening to music." },
+                { q: "look / the / at / broken / window", a: "Look at the broken window." },
+                { q: "important / it / is / to / exercise / regularly", a: "It is important to exercise regularly." },
+                { q: "the / street / walking / down / I / met / him", a: "Walking down the street, I met him." },
+                { q: "mind / you / would / opening / the / window / ?", a: "Would you mind opening the window?" }
+            ],
+            tokorean: [
+                { q: "To master English is not easy.", a: "영어를 마스터하는 것은 쉽지 않다." },
+                { q: "I remember seeing him somewhere before.", a: "나는 전에 어디선가 그를 봤던 것을 기억한다." },
+                { q: "The girl reading a book is my sister.", a: "책을 읽고 있는 저 소녀는 내 여동생이다." },
+                { q: "Not knowing what to say, I remained silent.", a: "무슨 말을 해야 할지 몰라서, 나는 침묵을 지켰다." },
+                { q: "It is kind of you to say so.", a: "그렇게 말씀해주시니 친절하시네요." },
+                { q: "He is good at playing soccer.", a: "그는 축구하는 것을 잘한다." },
+                { q: "I was surprised to see the result.", a: "나는 그 결과를 보고 놀랐다." },
+                { q: "This is a book written by a famous author.", a: "이것은 유명한 작가에 의해 쓰인 책이다." },
+                { q: "She tried not to make a mistake.", a: "그녀는 실수하지 않으려고 노력했다." },
+                { q: "Having finished his work, he went home.", a: "그의 일을 끝내고 나서, 그는 집에 갔다." }
+            ],
+            toenglish: [
+                { q: "나는 수영하러 가고 싶다.", a: "I want to go swimming." },
+                { q: "그의 직업은 영어를 가르치는 것이다.", a: "His job is teaching English." },
+                { q: "나는 마실 무언가가 필요하다.", a: "I need something to drink." },
+                { q: "그녀는 그 소식을 듣고 슬펐다.", a: "She was sad to hear the news." },
+                { q: "나는 문 잠그는 것을 잊었다.", a: "I forgot to lock the door." },
+                { q: "저기서 춤추고 있는 소녀를 봐.", a: "Look at the girl dancing over there." },
+                { q: "그는 약속 지키는 것을 그만뒀다.", a: "He stopped keeping his promise." },
+                { q: "이것은 중국에서 만들어진 인형이다.", a: "This is a doll made in China." },
+                { q: "그녀의 꿈은 세계를 여행하는 것이다.", a: "Her dream is to travel around the world." },
+                { q: "버스가 없어서, 우리는 걸어야 했다.", a: "There being no bus, we had to walk." }
+            ]
+        },
+        part7: {
+            title: "Part 7: 수식어 (Modifiers)",
+            description: "원급, 비교급, 최상급을 이용한 다양한 비교 표현을 정확하게 사용하는 능력을 연습합니다.",
+            unscramble: [
+                { q: "as / is / he / as / tall / his / father", a: "He is as tall as his father." },
+                { q: "is / much / this / better / than / that / one", a: "This one is much better than that one." },
+                { q: "the / he / is / student / smartest / the / in / class", a: "He is the smartest student in the class." },
+                { q: "the / more / you / the / get / more / you / want", a: "The more you get, the more you want." },
+                { q: "one / of / the / most / beautiful / she / is / actresses", a: "She is one of the most beautiful actresses." },
+                { q: "not / as / as / I / am / strong / you", a: "I am not as strong as you." },
+                { q: "this / is / expensive / less / than / that / one", a: "This one is less expensive than that one." },
+                { q: "the / higher / go / you / the / it / gets / colder", a: "The higher you go, the colder it gets." },
+                { q: "twice / as / this / big / as / is / that / one", a: "This one is twice as big as that one." },
+                { q: "is / the / most / what / important / thing / ?", a: "What is the most important thing?" }
+            ],
+            tokorean: [
+                { q: "She is not so old as she looks.", a: "그녀는 보기만큼 나이 들어 보이지 않는다." },
+                { q: "This car is far more expensive than I expected.", a: "이 차는 내가 예상했던 것보다 훨씬 더 비싸다." },
+                { q: "He is the most diligent student I have ever met.", a: "그는 내가 만나본 중에 가장 부지런한 학생이다." },
+                { q: "The faster you walk, the sooner you will arrive.", a: "네가 더 빨리 걸을수록, 너는 더 빨리 도착할 것이다." },
+                { q: "Nothing is as important as health.", a: "건강만큼 중요한 것은 없다." },
+                { q: "This is the second largest city in this country.", a: "이곳은 이 나라에서 두 번째로 큰 도시이다." },
+                { q: "My sister has three times as many books as I do.", a: "나의 언니는 나보다 세 배 더 많은 책을 가지고 있다." },
+                { q: "He is the least talkative person in the office.", a: "그는 사무실에서 가장 말이 없는 사람이다." },
+                { q: "The problem was easier than I thought.", a: "그 문제는 내가 생각했던 것보다 더 쉬웠다." },
+                { q: "This is one of the most famous paintings in the world.", a: "이것은 세계에서 가장 유명한 그림 중 하나이다." }
+            ],
+            toenglish: [
+                { q: "그는 나만큼 나이가 많다.", a: "He is as old as me." },
+                { q: "영어는 과학보다 더 어렵다.", a: "English is more difficult than science." },
+                { q: "에베레스트 산은 세계에서 가장 높은 산이다.", a: "Mount Everest is the highest mountain in the world." },
+                { q: "그는 나보다 훨씬 더 강하다.", a: "He is much stronger than me." },
+                { q: "더 많이 배울수록, 더 많이 알게 된다.", a: "The more you learn, the more you know." },
+                { q: "이것이 모든 것 중에서 가장 덜 중요하다.", a: "This is the least important of all." },
+                { q: "이 컴퓨터는 저것보다 두 배 비싸다.", a: "This computer is twice as expensive as that one." },
+                { q: "그녀는 우리 반에서 가장 친절한 소녀이다.", a: "She is the kindest girl in our class." },
+                { q: "어떤 동물도 치타만큼 빠르지 않다.", a: "No other animal is as fast as a cheetah." },
+                { q: "이것은 내가 본 영화 중 가장 슬픈 영화이다.", a: "This is the saddest movie that I have ever seen." }
+            ]
+        },
+        part8: {
+            title: "Part 8: 접속사 (Conjunctions)",
+            description: "명사절, 부사절을 이끄는 다양한 종속접속사와 짝을 이루어 쓰이는 상관접속사를 활용하는 능력을 연습합니다.",
+            unscramble: [
+                { q: "that / honest / I / he / is / believe", a: "I believe that he is honest." },
+                { q: "if / it / rains / I / will / stay / home / tomorrow", a: "If it rains tomorrow, I will stay home." },
+                { q: "was / she / tired / although / she / kept / working", a: "Although she was tired, she kept working." },
+                { q: "not / only / but / also / smart / he / is / kind", a: "He is not only smart but also kind." },
+                { q: "I / know / don't / if / he / will / come", a: "I don't know if he will come." },
+                { q: "as / as / soon / possible / call / me", a: "Call me as soon as possible." },
+                { q: "both / and / English / he / speaks / Chinese", a: "He speaks both English and Chinese." },
+                { q: "so / was / that / he / tired / he / couldn't / walk", a: "He was so tired that he couldn't walk." },
+                { q: "I / was / late / I / missed / because / the / bus", a: "I was late because I missed the bus." },
+                { q: "you / or / you / will / fail / study / hard", a: "Study hard, or you will fail." }
+            ],
+            tokorean: [
+                { q: "The problem is that I have no money.", a: "문제는 내가 돈이 없다는 것이다." },
+                { q: "I will wait here until she comes back.", a: "나는 그녀가 돌아올 때까지 여기서 기다릴 것이다." },
+                { q: "He is so tall that he can touch the ceiling.", a: "그는 키가 매우 커서 천장에 닿을 수 있다." },
+                { q: "Whether you succeed or not depends on your efforts.", a: "네가 성공할지 아닐지는 너의 노력에 달려있다." },
+                { q: "Even though he is poor, he is always happy.", a: "그는 비록 가난하지만, 항상 행복하다." },
+                { q: "She is as beautiful as her mother.", a: "그녀는 그녀의 어머니만큼 아름답다." },
+                { q: "Take an umbrella in case it rains.", a: "비가 올 경우를 대비해서 우산을 가져가라." },
+                { q: "He can speak not only English but also French.", a: "그는 영어뿐만 아니라 프랑스어도 말할 수 있다." },
+                { q: "I don't know whether he is right or wrong.", a: "나는 그가 옳은지 틀린지 모르겠다." },
+                { q: "As he grew older, he became wiser.", a: "나이가 들어감에 따라, 그는 더 현명해졌다." }
+            ],
+            toenglish: [
+                { q: "나는 네가 성공할 것이라고 확신한다.", a: "I am sure that you will succeed." },
+                { q: "네가 바쁘지 않다면, 나를 좀 도와줄 수 있니?", a: "If you are not busy, can you help me?" },
+                { q: "그녀는 똑똑할 뿐만 아니라, 유머 감각도 있다.", a: "She has not only intelligence but also a sense of humor." },
+                { q: "그는 너무 어려서 그 영화를 볼 수 없다.", a: "He is too young to see the movie." },
+                { q: "나는 TV를 보고 있는 동안, 그는 책을 읽고 있었다.", a: "While I was watching TV, he was reading a book." },
+                { q: "그녀는 너무 정직해서 거짓말을 할 수 없다.", a: "She is so honest that she cannot tell a lie." },
+                { q: "너는 사과나 오렌지 중 하나를 선택할 수 있다.", a: "You can choose either an apple or an orange." },
+                { q: "나는 아팠기 때문에 학교에 가지 않았다.", a: "I didn't go to school because I was sick." },
+                { q: "그가 정직한지 아닌지는 확실하지 않다.", a: "It is not certain whether he is honest or not." },
+                { q: "그가 집에 오자마자, 그는 잠자리에 들었다.", a: "As soon as he came home, he went to bed." }
+            ]
+        },
+        part9: {
+            title: "Part 9: 관계사 (Relatives)",
+            description: "선행사에 맞는 관계대명사와 관계부사를 선택하고, 특히 선행사를 포함하는 'what'과 계속적 용법을 연습합니다.",
+            unscramble: [
+                { q: "is / the / this / book / I / that / wanted", a: "This is the book that I wanted." },
+                { q: "the / girl / who / is / my / is / sister / singing", a: "The girl who is singing is my sister." },
+                { q: "the / reason / I / why / know / don't / he / left", a: "I don't know the reason why he left." },
+                { q: "what / is / this / I / is / wanted / what", a: "This is what I wanted." },
+                { q: "I / a / have / friend / whose / is / father / a / doctor", a: "I have a friend whose father is a doctor." },
+                { q: "the / house / where / this / is / I / was / born", a: "This is the house where I was born." },
+                { q: "I / met / who / a / is / from / Canada / girl", a: "I met a girl who is from Canada." },
+                { q: "he / said / believe / can't / I / what", a: "I can't believe what he said." },
+                { q: "the / day / remember / I / when / we / first / met", a: "I remember the day when we first met." },
+                { q: "the / which / on / the / is / desk / book / is / mine", a: "The book which is on the desk is mine." }
+            ],
+            tokorean: [
+                { q: "This is the city in which I grew up.", a: "이곳은 내가 자란 도시이다." },
+                { q: "He has a daughter, who is a famous pianist.", a: "그에게는 딸이 한 명 있는데, 그녀는 유명한 피아니스트이다." },
+                { q: "What is important is not what you have, but what you are.", a: "중요한 것은 네가 무엇을 가졌는지가 아니라, 네가 어떤 사람인지이다." },
+                { q: "Tell me the way you solved the problem.", a: "네가 그 문제를 푼 방법을 나에게 말해줘." },
+                { q: "The man to whom I spoke was very kind.", a: "내가 말을 걸었던 그 남자는 매우 친절했다." },
+                { q: "This is the same watch as I lost.", a: "이것은 내가 잃어버린 것과 같은 종류의 시계이다." },
+                { q: "I apologized to the woman whose coffee I spilled.", a: "나는 내가 커피를 쏟은 그 여성에게 사과했다." },
+                { q: "Sunday is the day when I can relax.", a: "일요일은 내가 쉴 수 있는 날이다." },
+                { q: "He gave me what he had in his pocket.", a: "그는 그의 주머니에 있던 것을 나에게 주었다." },
+                { q: "I visited my uncle, who lives in Seoul.", a: "나는 나의 삼촌을 방문했는데, 그는 서울에 산다." }
+            ],
+            toenglish: [
+                { q: "내가 존경하는 사람은 나의 아버지이다.", a: "The person whom I respect is my father." },
+                { q: "이것이 내가 그를 좋아하는 이유이다.", a: "This is the reason why I like him." },
+                { q: "나는 지붕이 빨간 집을 샀다.", a: "I bought a house whose roof is red." },
+                { q: "이것이 내가 찾고 있던 것이다.", a: "This is what I was looking for." },
+                { q: "나는 우리가 처음 만났던 공원을 기억한다.", a: "I remember the park where we first met." },
+                { q: "그녀는 나에게 책을 한 권 주었는데, 그것은 매우 흥미로웠다.", a: "She gave me a book, which was very interesting." },
+                { q: "네가 필요한 것을 가져가라.", a: "Take what you need." },
+                { q: "나는 다리가 부러진 개를 발견했다.", a: "I found a dog whose leg was broken." },
+                { q: "나는 네가 말한 것을 이해하지 못한다.", a: "I don't understand what you said." },
+                { q: "이것이 그가 성공한 방법이다.", a: "This is how he succeeded." }
+            ]
+        },
+        part10: {
+            title: "Part 10: 특수 구문",
+            description: "가정법, 도치, 강조 등 문장의 의미와 뉘앙스를 크게 바꾸는 고급 문법 규칙을 연습합니다.",
+            unscramble: [
+                { q: "I / were / a / bird / if / I / could / fly", a: "If I were a bird, I could fly." },
+                { q: "had / I / known / if / the / truth / I / would / have / helped / you", a: "If I had known the truth, I would have helped you." },
+                { q: "never / have / I / such / a / seen / beautiful / sight", a: "Never have I seen such a beautiful sight." },
+                { q: "it / that / broke / was / Tom / the / window", a: "It was Tom that broke the window." },
+                { q: "I / wish / I / could / swim / well", a: "I wish I could swim well." },
+                { q: "on / the / hill / stands / a / church", a: "On the hill stands a church." },
+                { q: "not / only / does / he / sing / well / but / he / also / dances / well", a: "Not only does he sing well, but he also dances well." },
+                { q: "I / do / love / you", a: "I do love you." },
+                { q: "had / I / enough / money / if / I / could / have / bought / it", a: "If I had had enough money, I could have bought it." },
+                { q: "little / did / I / dream / that / I / would / win", a: "Little did I dream that I would win." }
+            ],
+            tokorean: [
+                { q: "If I were you, I would accept his offer.", a: "내가 너라면, 그의 제안을 받아들일 텐데." },
+                { q: "If he had taken my advice, he would have succeeded.", a: "그가 내 조언을 받아들였더라면, 그는 성공했을 텐데." },
+                { q: "Nowhere can you find such a beautiful place.", a: "어디에서도 당신은 그렇게 아름다운 장소를 찾을 수 없다." },
+                { q: "It was yesterday that I met her.", a: "내가 그녀를 만난 것은 바로 어제였다." },
+                { q: "I wish I had a brother.", a: "나에게 오빠가 있다면 좋을 텐데." },
+                { q: "Not a single word did she say.", a: "그녀는 단 한마디도 하지 않았다." },
+                { q: "He did promise to come.", a: "그는 정말로 오겠다고 약속했다." },
+                { q: "Without your help, I could not have done it.", a: "너의 도움이 없었더라면, 나는 그것을 할 수 없었을 것이다." },
+                { q: "It is I that am responsible for this.", a: "이것에 책임이 있는 것은 바로 나다." },
+                { q: "So great was his joy that he could not speak.", a: "그의 기쁨이 너무나 커서 그는 말을 할 수 없었다." }
+            ],
+            toenglish: [
+                { q: "내가 새라면, 너에게 날아갈 텐데.", a: "If I were a bird, I would fly to you." },
+                { q: "내가 더 열심히 공부했더라면, 시험에 합격했을 텐데.", a: "If I had studied harder, I would have passed the exam." },
+                { q: "나는 그가 올 것이라고는 거의 꿈에도 생각 못했다.", a: "Little did I dream that he would come." },
+                { q: "내가 그녀를 만난 곳은 바로 이 공원이었다.", a: "It was in this park that I met her." },
+                { q: "내가 더 많은 돈을 가졌더라면 좋을 텐데.", a: "I wish I had more money." },
+                { q: "그는 결코 거짓말을 하지 않는다.", a: "Never does he tell a lie." },
+                { q: "나는 정말로 너를 보고 싶다.", a: "I do want to see you." },
+                { q: "그녀의 도움이 없었더라면, 나는 실패했을 것이다.", a: "Without her help, I would have failed." },
+                { q: "언덕 위에 교회가 하나 서 있다.", a: "On the hill stands a church." },
+                { q: "나는 그가 그렇게 말할 줄은 전혀 몰랐다.", a: "I had no idea that he would say so." }
+            ]
+        }
+    };
+    
+    function generatePracticeSection(partId, content) {
+        let html = `<h2 class="text-3xl font-bold text-center">${content.title}</h2>`;
+        html += `<p class="practice-description">${content.description}</p>`;
+        
+        // Unscramble
+        html += `<div class="quiz-section bg-white p-6 rounded-lg shadow-sm mb-8">
+                    <h3 class="text-xl font-semibold">🔎 문장 배열 (10)</h3>
+                    <form id="quiz-${partId}-unscramble" class="space-y-4">`;
+        content.unscramble.forEach((item, index) => {
+            html += `<div class="question-item"><p>${index + 1}. ${item.q}</p><input type="text" class="quiz-input w-full p-2 border rounded mt-1" data-answer="${item.a}"></div>`;
+        });
+        html += `<button type="button" onclick="checkQuiz('quiz-${partId}-unscramble')" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">정답 확인</button></form></div>`;
+
+        // To Korean
+        html += `<div class="quiz-section bg-white p-6 rounded-lg shadow-sm mb-8">
+                    <h3 class="text-xl font-semibold">🇰🇷 해석하기 (10)</h3>
+                    <form id="quiz-${partId}-tokorean" class="space-y-4">`;
+        content.tokorean.forEach((item, index) => {
+            html += `<div class="question-item"><p>${index + 1}. ${item.q}</p><input type="text" class="quiz-input w-full p-2 border rounded mt-1" data-answer="${item.a}"></div>`;
+        });
+        html += `<button type="button" onclick="checkQuiz('quiz-${partId}-tokorean')" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">정답 확인</button></form></div>`;
+
+        // To English
+        html += `<div class="quiz-section bg-white p-6 rounded-lg shadow-sm">
+                    <h3 class="text-xl font-semibold">✍️ 영작하기 (10)</h3>
+                    <form id="quiz-${partId}-toenglish" class="space-y-4">`;
+        content.toenglish.forEach((item, index) => {
+            html += `<div class="question-item"><p>${index + 1}. ${item.q}</p><input type="text" class="quiz-input w-full p-2 border rounded mt-1" data-answer="${item.a}"></div>`;
+        });
+        html += `<button type="button" onclick="checkQuiz('quiz-${partId}-toenglish')" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">정답 확인</button></form></div>`;
+        
+        return html;
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const mainContent = document.getElementById('main-content');
+        
+        // Populate all parts
+        for (let i = 1; i <= 10; i++) {
+            const partId = 'part' + i;
+            const section = document.createElement('section');
+            section.id = partId;
+            section.classList.add('content-section', 'space-y-12');
+            if (practiceContent[partId]) {
+                section.innerHTML = generatePracticeSection('p' + i, practiceContent[partId]);
+            } else {
+                 section.innerHTML = `<h2 class="text-3xl font-bold text-center">${partId}</h2><p class="text-center text-gray-600">내용 준비 중입니다...</p>`;
+            }
+            mainContent.appendChild(section);
+        }
+
+        const navTabs = document.querySelectorAll('.nav-tab');
+        const contentSections = document.querySelectorAll('.content-section');
+
+        function updateContent(targetId) {
+            navTabs.forEach(tab => {
+                tab.classList.toggle('active', tab.dataset.target === targetId);
+            });
+            contentSections.forEach(section => {
+                section.classList.toggle('active', '#' + section.id === targetId);
+            });
+        }
+
+        const navigation = document.getElementById('navigation');
+        navigation.addEventListener('click', (e) => {
+            if (e.target.classList.contains('nav-tab')) {
+                const targetId = e.target.dataset.target;
+                updateContent(targetId);
+            }
+        });
+        
+        updateContent('#part1');
+    });
+
+    function checkQuiz(formId) {
+        const form = document.getElementById(formId);
+        const questionItems = form.querySelectorAll('.question-item');
+        
+        questionItems.forEach(item => {
+            const input = item.querySelector('.quiz-input');
+            const oldFeedback = item.querySelector('.feedback-icon');
+            if (oldFeedback) {
+                oldFeedback.remove();
+            }
+
+            input.classList.remove('correct', 'incorrect');
+            const userAnswer = input.value.trim().toLowerCase().replace(/[.?]/g, '');
+            const correctAnswer = input.dataset.answer.trim().toLowerCase().replace(/[.?]/g, '');
+            
+            const feedbackSpan = document.createElement('span');
+            feedbackSpan.classList.add('feedback-icon');
+
+            if (userAnswer === correctAnswer) {
+                input.classList.add('correct');
+                feedbackSpan.textContent = '✔';
+                feedbackSpan.classList.add('correct');
+            } else {
+                input.classList.add('incorrect');
+                feedbackSpan.innerHTML = `❌ <span class="correct-answer">(정답: ${input.dataset.answer})</span>`;
+                feedbackSpan.classList.add('incorrect');
+            }
+            input.after(feedbackSpan);
+        });
+    }
+</script>
+</body>
+</html>
